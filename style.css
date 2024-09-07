@@ -23,10 +23,13 @@
     --textonegro: #ffffff
 }
 
+
+
 body {
     font-family: "Wix Madefor Text", sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
+    margin: 0;
 }
 
 
@@ -54,11 +57,17 @@ body {
     -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
     box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
     z-index: 2;
+    
+
+
 }
 
 .nav-links {
     padding: 10px 10px;
     margin-right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-links a {
@@ -71,23 +80,22 @@ body {
 }
 
 .nav-links a:hover {
-    transform: scale(1.2); 
+    transform: scale(1.1); 
     color: #ff6347; 
 }
 .btn-nav{
-    
     display: inline-block;
-    width: 60px;
+    width: 50px;
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
+    text-align: center;
     color: white;
     background-color: #ff6347; 
     text-decoration: none;
     border-radius: 30px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px;
     margin-left: 30px;
 
 }
@@ -116,6 +124,68 @@ body {
     height: 114px;
     margin-left: 20px;
     animation: girar 10s infinite linear; /* Aplica la animación continua */
+}
+
+/*Darkmode*/
+/* The switch - the box around the slider */
+.switch {
+    display: block;
+    --width-of-switch: 4em;
+    --height-of-switch: 3em;
+    /* size of sliding icon -- sun and moon */
+    --size-of-icon: 1.4em;
+    /* it is like a inline-padding of switch */
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    margin-left: 30px;
+
+
+}
+
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+  /* The slider */
+.slider-darkmode {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cdcdcf;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider-darkmode:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    transition: .4s;
+}
+
+input:checked + .slider-darkmode {
+background-color: #303136;
+}
+
+input:checked + .slider-darkmode:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
 
 
@@ -373,4 +443,16 @@ body {
 
 .prev:hover svg, .next:hover svg {
     stroke: #007BFF;
+}
+
+/*Footer*/
+
+.footer{
+    width: 100%;
+    height: auto;
+}
+
+.footer img{
+    width: 100%;
+    height: auto;
 }

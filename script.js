@@ -72,3 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Configura el botón para cambiar el tema
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 });
+
+
+
+
+
