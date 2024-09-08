@@ -389,18 +389,44 @@ input:checked + .slider-darkmode:before {
     text-align: center;
     padding: 20px;
     flex: 0 0 22%; /* Asegura que se muestren 3 cartas en el contenedor */
-    color:#000000;
+    color: #000000;
 }
 
 .card_img {
     width: 100%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 10%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Añade transición para suavizar la animación */
+}
+
+.card_img:hover {
+    transform: scale(1.1); /* Agranda la imagen al pasar el mouse */
 }
 
 .card_info {
+    display: none; /* Oculta el texto */
+}
+
+.card_button {
     margin-top: 10px;
 }
+
+.card_button button {
+    background-color: #3BB07B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card_button button:hover {
+    background-color: #87D279;
+    transform: scale(1.1); /*agranda el boton info*/
+}
+
 
 /* Botones prev y next ocultos por defecto */
 .prev, .next {
