@@ -47,7 +47,7 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 120px;
-    border: 2px solid black;
+    border: 2px solid var(--border-color);
     border-radius: 24px;
     background-color: var(--background-color);
     position: absolute;
@@ -80,7 +80,7 @@ body {
 }
 
 .nav-links a:hover {
-    transform: scale(1.1); 
+    transform: scale(1.04); 
     color: #ff6347; 
 }
 .btn-nav{
@@ -274,7 +274,7 @@ input:checked + .slider-darkmode:before {
     height: 300px;
     background-color: rgb(253, 253, 253);
     z-index: 2;
-    border: 2px solid black;
+    border: 2px solid var(--border-color);
     -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
     -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
     box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
@@ -381,7 +381,7 @@ input:checked + .slider-darkmode:before {
 
 .card {
     background-color: white;
-    border: 2px solid black;
+    border: 2px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.49);
     margin: 10px;
@@ -456,3 +456,128 @@ input:checked + .slider-darkmode:before {
     width: 100%;
     height: auto;
 }
+
+/*Galeria de imagenes*/
+.gallery-section {
+    padding: 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Contenedor de la galería */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Estilos para cada imagen de la galería */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+
+/* Card Informacion */
+.section-card-info {
+    width: 1200px;
+    height: 400px;
+    margin: 200px auto;
+    display: flex;
+    justify-content: space-between; /* Espaciado igual entre los divs */
+    gap: 20px; /* Espaciado adicional entre los divs */
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
+    z-index: 2;
+    box-sizing: border-box; /* Para que el padding no afecte el tamaño */
+}
+
+.div-card-info {
+    width: calc(33.33% - 20px); /* Tres columnas con espacio entre ellas */
+    background-color: #007BFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido al principio (arriba) */
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    border-radius: 10px;
+    padding: 20px; /* Aumentar el padding para más espacio interior */
+    margin: 10px;
+}
+
+.section-card-info .div-card-info:nth-child(1) {
+    background-color: #D7BCE8; /* Azul */
+}
+
+.section-card-info .div-card-info:nth-child(2) {
+    background-color: #FFB3B3; /* Verde */
+}
+
+.section-card-info .div-card-info:nth-child(3) {
+    background-color: #ADD8E6; /* Amarillo */
+}
+
+/* Ajuste del contenido */
+.div-card-info h2 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 5px; /* Reducir margen inferior */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.div-card-info p {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    margin-top: 0; /* Eliminar margen superior */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Estilos del botón "Leer más" */
+.btn-read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #8983f7;
+    transition: background-color 0.3s ease;
+    text-align: left; /* Alinea el botón a la izquierda */
+}
+
+
