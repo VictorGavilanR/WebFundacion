@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     let observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -75,5 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+let lastScrollTop = 0;
 
+window.addEventListener("scroll", function() {
+  const img = document.querySelector(".nosotros_img");
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    // Scroll hacia abajo - rota a la derecha (5 grados)
+    img.style.transform += "rotate(3deg)";
+  } else {
+    // Scroll hacia arriba - rota a la izquierda (5 grados)
+    img.style.transform += "rotate(-3deg)";
+  }
+
+  lastScrollTop = scrollTop;
+});
 

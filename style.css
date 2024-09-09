@@ -8,6 +8,7 @@
     --box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
     --linea: #000000;
     --textonegro: #000000;
+    --a-navbar: #808080;
     
 }
 
@@ -20,7 +21,30 @@
     --border-color: #ffffff;
     --box-shadow: 0px 10px 5px 0px rgba(255,255,255,0.49);
     --linea: #ffffff;
-    --textonegro: #ffffff
+    --textonegro: #ffffff;
+    --a-navbar:#ffffff;
+}
+
+  /* CSS para personalizar la barra de scroll */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f9c5ce; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f9c5ce; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f9c5ce; 
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #f9c5ce #f1f1f1;
 }
 
 
@@ -30,6 +54,9 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
+}
+p{
+    font-family: "Lato", sans-serif;
 }
 
 
@@ -72,8 +99,10 @@ body {
 
 .nav-links a {
     font-size: 25px;
-    font-family: "Wix Madefor Text", sans-serif;
-    color: var(--text-color);
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--a-navbar);
     text-decoration: none;
     margin-left: 30px;
     transition: transform 0.3s ease, color 0.3s ease; 
@@ -228,7 +257,8 @@ input:checked + .slider-darkmode:before {
     height: 300px;
 }
 .content_titulo h1{
-    font-size: 48px;
+    font-size: 70px;
+    font-family:"Nunito", sans-serif;
     font-weight: bold;
     background: linear-gradient(90deg, 
                 #D7BCE8, /* Morado Pastel */
@@ -274,13 +304,14 @@ input:checked + .slider-darkmode:before {
     height: 300px;
     background-color: rgb(253, 253, 253);
     z-index: 2;
-    border: 2px solid var(--border-color);
+    border: 2px solid #ADD8E6;
     -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
     -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
     box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
     margin-left: 10vh;
     position: relative;
     overflow: hidden; 
+    opacity: 0.9;
 }
 
 .video video {
@@ -289,9 +320,12 @@ input:checked + .slider-darkmode:before {
     object-fit: cover; 
 }
 
+/*Nosotros*/
+
+
 .nosotros {
     padding: 20px;
-    padding-top: 200px;
+    padding-top: 150px;
     text-align: center;
 }
 
@@ -300,19 +334,16 @@ input:checked + .slider-darkmode:before {
     align-items: center;
     justify-content: center;
     overflow: hidden; 
-    
 }
 
-/* Estilos de la imagen */
 .nosotros_img {
-    max-width: 50%;
-    margin-right: 20px;
+    margin-right: 40px;
     transform: translateX(-100%);
     opacity: 0;
     transition: transform 1s, opacity 1s;
-    border-top-right-radius: 100px;
-    border-bottom-left-radius: 100px; 
+    width: 400px;
 }
+
 
 
 
@@ -327,6 +358,7 @@ input:checked + .slider-darkmode:before {
     transform: translateX(100%); 
     opacity: 0; 
     transition: transform 1s, opacity 1s;
+    padding-top: 100px;
 }
 
 .nosotros.animate .nosotros_texto {
@@ -353,11 +385,45 @@ input:checked + .slider-darkmode:before {
 }
 .nosotros_texto p {
     font-size: 20px;
-    font-family: "Wix Madefor Text", sans-serif;
-    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
 
 }
 
+.nosotros-circulos{
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    height: 300px;
+    gap: 30px;
+}
+.circulo{
+    background-color: #f9c5ce;
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+}
+.circulo:nth-child(2){
+    background-color:#acdeb3;
+}
+
+.circulo img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 30px;
+    width: 70px;
+    height: 70px;
+}
+
+.circulo p{
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    padding-top: 10px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+
+}
 
 /* Equipo de trabajo */
 .equipo {
@@ -460,7 +526,6 @@ input:checked + .slider-darkmode:before {
 /*Galeria de imagenes*/
 .gallery-section {
     padding: 20px;
-    background-color: #f7f7f7;
     text-align: center;
 }
 
@@ -484,6 +549,8 @@ input:checked + .slider-darkmode:before {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
+    display: flex;
+
 }
 
 .gallery-item img {
@@ -581,3 +648,15 @@ input:checked + .slider-darkmode:before {
 }
 
 
+
+
+
+/*span*/
+
+.morado{
+    color:#8983f7;
+}
+.rosado{
+    color:#f9c5ce;
+    font-weight: 600;
+}
