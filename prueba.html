@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo</title>
+    <link rel="stylesheet" href="prueba.css">
+</head>
+<body>
+    <div class="decoration"></div>
+    <div class="container">
+        <h1>Equipo</h1>
+        <div class="team-grid">
+            <div class="team-member" onclick="openModal('img/equipodetrabajobarbara.png', 'Bárbara Oliva', 'Información detallada de Bárbara Oliva...')">
+                <img src="img/equipodetrabajobarbara.png" alt="Barbara Oliva">
+                <h3>Bárbara Oliva</h3>
+                <p>texto</p>
+            </div>
+            <div class="team-member" onclick="openModal('img/equipodetrabajotrabajadorasocial.png', 'Natalia Melo', 'Información detallada de Natalia Melo...')">
+                <img src="img/equipodetrabajotrabajadorasocial.png" alt="Natalia Melo">
+                <h3>Natalia Melo</h3>
+                <p>texto</p>
+            </div>
+            <div class="team-member" onclick="openModal('img/equipodetrabajofonoaudiologa.png', 'Francisca Cabrera', 'Información detallada de Francisca Cabrera...')">
+                <img src="img/equipodetrabajofonoaudiologa.png" alt="Francisca Cabrera">
+                <h3>Francisca Cabrera</h3>
+                <p>texto</p>
+            </div>
+            <div class="team-member" onclick="openModal('img/equipodetrabajokinesiologa.png', 'Geraldine Harper', 'Información detallada de Geraldine Harper...')">
+                <img src="img/equipodetrabajokinesiologa.png" alt="Geraldine Harper">
+                <h3>Geraldine Harper</h3>
+                <p>texto</p>
+            </div>
+            <div class="team-member" onclick="openModal('img/equipodetrabajokinesiologo.png', 'Alfredo Aguilera', 'Información detallada de Alfredo Aguilera...')">
+                <img src="img/equipodetrabajokinesiologo.png" alt="Alfredo Aguilera">
+                <h3>Alfredo Aguilera</h3>
+                <p>texto</p>
+            </div>
+            <div class="team-member" onclick="openModal('img/equipodetrabajopsico.png', 'Constanza Rodriguez', 'Información detallada de Constanza Rodriguez...')">
+                <img src="img/equipodetrabajopsico.png" alt="Constanza Rodriguez">
+                <h3>Constanza Rodriguez</h3>
+                <p>texto</p>
+            </div>
+            <div class="team-member" onclick="openModal('img/equipodetrabajopsicologa.png', 'Paola Avello', 'Información detallada de Paola Avello...')">
+                <img src="img/equipodetrabajopsicologa.png" alt="Paola Avello">
+                <h3>Paola Avello</h3>
+                <p>texto</p>
+            </div>
+            <div class="team-member" onclick="openModal('img/equipodetrabajotallerista.png', 'Maribel Albornoz', 'Información detallada de Maribel Albornoz...')">
+                <img src="img/equipodetrabajotallerista.png" alt="Maribel Albornoz">
+                <h3>Maribel Albornoz</h3>
+                <p>texto</p>
+            </div>
+            <div class="team-member" onclick="openModal('img/equipodetrabajoterapeuta.png', 'María Ignacia Carrasco', 'Información detallada de María Ignacia Carrasco...')">
+                <img src="img/equipodetrabajoterapeuta.png" alt="María Ignacia Carrasco">
+                <h3>María Ignacia Carrasco</h3>
+                <p>texto</p>
+            </div>
+            <div class="team-member" onclick="openModal('img/equipotrabajokarate.png', 'Mario Freixas', 'Información detallada de Mario Freixas...')">
+                <img src="img/equipotrabajokarate.png" alt="Mario Freixas">
+                <h3>Mario Freixas</h3>
+                <p>texto</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="Imagen ampliada">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <script src="modal.js"></script>
+</body>
+</html>
