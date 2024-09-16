@@ -7,9 +7,26 @@
     <link rel="stylesheet" href="prueba.css">
 </head>
 <body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar_logo">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider-darkmode"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+    
     <div class="decoration"></div>
     <div class="container">
-        <h1>Equipo</h1>
+        <h1 id="inicio">Equipo</h1>
         <div class="team-grid">
             <div class="team-member" onclick="openModal('img/equipodetrabajobarbara.png', 'Bárbara Oliva', 'Información detallada de Bárbara Oliva...')">
                 <img src="img/equipodetrabajobarbara.png" alt="Barbara Oliva">
@@ -75,5 +92,17 @@
     </div>
 
     <script src="modal.js"></script>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Fundación Vita. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="img/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="img/instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

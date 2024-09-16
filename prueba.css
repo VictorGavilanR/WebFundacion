@@ -1,9 +1,127 @@
+/* Header Styles */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar_logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #87D279;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-darkmode {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider-darkmode:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider-darkmode {
+    background-color: #2196F3;
+}
+
+input:checked + .slider-darkmode:before {
+    transform: translateX(14px);
+}
+
+/* Offset for fixed header */
 body {
+    padding-top: 70px;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    background-image: url('img/manoscorazones.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: contain; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
     margin: 0;
-    padding: 0;
     animation: fadeIn 1s ease-in-out;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .header {
+    background-color: #222;
+}
+
+body.dark-mode .nav-links a {
+    color: #ddd;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #87D279;
+}
+
+body.dark-mode .switch .slider-darkmode {
+    background-color: #555;
+}
+
+body.dark-mode .switch .slider-darkmode:before {
+    background-color: #777;
 }
 
 @keyframes fadeIn {
@@ -171,5 +289,46 @@ h1 {
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer .social-links {
+    margin-top: 10px;
+}
+
+.footer .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer .social-links img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer .social-links img:hover {
+    transform: scale(1.2);
 }
     
