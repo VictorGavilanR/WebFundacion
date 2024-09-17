@@ -95,19 +95,15 @@ window.addEventListener("scroll", function() {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
+/*menu hamburguesa*/ 
+document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.navbar').classList.toggle('active');
+    document.querySelector('.hamburger').classList.toggle('hidden');
+    document.querySelector('.close').classList.toggle('hidden');
+});
 
-    hamburger.addEventListener("click", function() {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    });
-
-    const navLink = document.querySelectorAll(".nav-link");
-
-    navLink.forEach(n => n.addEventListener("click", function() {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-    }));
+document.querySelector('.close').addEventListener('click', function() {
+    document.querySelector('.navbar').classList.remove('active');
+    document.querySelector('.hamburger').classList.remove('hidden');
+    document.querySelector('.close').classList.add('hidden');
 });
