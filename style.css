@@ -981,7 +981,8 @@ body {
 
 
 /*cards*/
-.section {
+/* Sección principal */
+.section-mision-vision {
     width: 80%;
     text-align: center;
     margin: 200px auto;
@@ -989,35 +990,34 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10%;
+    flex-wrap: wrap; /* Permite que los elementos se alineen en columnas en pantallas pequeñas */
 }
 
+/* Tarjetas de Misión y Visión */
 .mision-vision {
-    flex: 1; /* Hace que todas las columnas tengan el mismo tamaño */
+    flex: 1;
     max-width: 300px; /* Limita el ancho máximo para evitar que crezcan demasiado */
-    height: 300px; /* Ajusta la altura */
+    min-width: 200px; /* Asegura un ancho mínimo */
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Alinea el contenido verticalmente */
+    justify-content: center;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
+    text-align: center;
 }
 
-.circle {
-    width: 300px; /* Ajusta el tamaño del círculo */
-    height: 300px;
-    background-color: #080808;
-    border-radius: 50%;
-    margin: 0 auto;
-}
-
+/* Imagen circular */
 .circulo-img {
     width: 100%;
 }
 
+/* Texto */
 .section-texto {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .section-texto h2 {
@@ -1031,16 +1031,33 @@ body {
     margin: 10px auto;
 }
 
-.section-texto li{
+.section-texto li {
     list-style: none;
     color: #7e807f;
-
 }
 
 .section-texto p {
     font-size: 16px;
     color: #7e807f;
 }
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .section-mision-vision {
+        flex-direction: column; /* Cambia el diseño a columnas en pantallas pequeñas */
+        gap: 20px; /* Aumenta el espacio entre los elementos */
+    }
+
+    .mision-vision {
+        max-width: 100%; /* Asegura que las tarjetas ocupen todo el ancho del contenedor */
+        min-width: auto; /* Elimina el ancho mínimo para permitir mayor flexibilidad */
+    }
+
+    .circulo-img {
+        width: 80%; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
+    }
+}
+
 
 
 /* Seccion Equipo*/
