@@ -309,8 +309,8 @@ body {
         top: 0;
         right: -100%;
         width: 70%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.9);
+        height: 70%;
+        background: rgba(253, 251, 251, 0.9);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -669,6 +669,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 16px;
     padding: 16px;
+    width: 100%;
 }
 
 .footer-content {
