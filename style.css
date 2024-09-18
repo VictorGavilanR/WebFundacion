@@ -200,7 +200,7 @@ body {
     position: absolute;
     top: -25%;
     right: -25%;
-    width: 700px;
+    width: 800px;
     height: 700px;
     background: #8983f7;
     transform: rotate(-45deg);
@@ -209,6 +209,8 @@ body {
     animation: rhombus2 1s ease forwards;
     animation-delay: 1.8s;
 }
+
+
 @media (max-width: 768px) {
     .home {
         padding: 110px 5%;
@@ -469,7 +471,15 @@ body {
     animation-delay: 0.5s;
 }
 
+.linea-nosotros{
+    width: 10%;
+    height: 4px;
+    background: #8983f7;
+    margin: 0 auto;
+    border: none;
 
+
+}
 .nosotros_texto h2 {
     font-size: 50px;
     font-weight: 400;
@@ -559,7 +569,20 @@ body {
     animation: zoomOut 1s ease forwards;
     animation-delay: 1s;
 }
+/* Contenedor del slider */
+.image-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
 
+/* Contenedor para las imágenes pequeñas con scroll horizontal */
+.image-grid-container {
+    overflow: hidden;
+    width: 100%;
+}
 /* Imagen destacada */
 .featured-image img {
     width: 100%;
@@ -584,6 +607,47 @@ body {
 .image-item img:hover {
     transform: scale(1.05);
 }
+/* Imagen destacada con transición */
+/* Imagen destacada con transición */
+.featured-image img {
+    width: 100%;
+    border-radius: 8px;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+/* Clase que se aplica durante el cambio de imagen */
+.fade-out {
+    opacity: 0;
+}
+
+/* Botones de navegación */
+.prev-btn, .next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Ocultar los botones si no hay más imágenes a la izquierda o derecha */
+.prev-btn:disabled, .next-btn:disabled {
+    display: none;
+}
+
 
 
 
@@ -673,7 +737,7 @@ body {
 }
 
 .footer-content {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 16px;
 }

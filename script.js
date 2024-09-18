@@ -1,44 +1,4 @@
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.slider');
-    const equipoContent = document.querySelector('.equipo_content');
-    const cards = document.querySelectorAll('.card');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const totalCards = cards.length;
-    const cardsPerView = 3; // Cantidad de cartas visibles
-    let currentIndex = 0;
-
-    function updateSlider() {
-        equipoContent.style.transform = `translateX(-${currentIndex * (100 / cardsPerView)}%)`;
-    }
-
-    function showNextCard() {
-        if (currentIndex < totalCards - cardsPerView) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Reinicia cuando no queden más cartas para llenar la vista
-        }
-        updateSlider();
-    }
-
-    function showPrevCard() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = totalCards - cardsPerView; // Muestra la última serie completa de cartas
-        }
-        updateSlider();
-    }
-
-    nextButton.addEventListener('click', showNextCard);
-    prevButton.addEventListener('click', showPrevCard);
-
-    setInterval(showNextCard, 3000); // Cambia cada 3 segundos
-});
-
-
 /*menu hamburguesa*/ 
 document.querySelector('.hamburger').addEventListener('click', function() {
     document.querySelector('.navbar').classList.toggle('active');
@@ -89,6 +49,76 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(texto);
     }
 });
+
+
+/* Galería mostrar en pantalla grande*/ 
+
+ // Selecciona todas las imágenes pequeñas
+ const smallImages = document.querySelectorAll('.image-item img');
+ // Selecciona la imagen destacada
+ const featuredImage = document.getElementById('featured');
+
+ // Agrega un listener de clic a cada imagen pequeña
+ smallImages.forEach(image => {
+     image.addEventListener('click', function() {
+         // Inicia la animación de desvanecimiento (fade-out)
+         featuredImage.style.opacity = 0;
+
+         // Cambia la imagen después de la animación de desvanecimiento
+         setTimeout(() => {
+             // Cambia la imagen destacada por la que se clickeó
+             featuredImage.src = this.src;
+
+             // Vuelve a hacer visible la imagen (fade-in)
+             featuredImage.style.opacity = 1;
+         }, 200); // El tiempo aquí debe coincidir con la duración de la transición en CSS
+     });
+ });
+
+ /*SLIDER EN GALERIA */
+
+    // Selecciona el contenedor que tiene las imágenes pequeñas
+    const imageGrid = document.querySelector('.image-grid');
+    // Control de desplazamiento
+    let currentIndex = 0;
+    const visibleImages = 5; // Cantidad de imágenes visibles al mismo tiempo
+    const imageWidth = 120; // Ancho de cada imagen incluyendo el espacio (ajústalo según tu diseño)
+
+    // Botones de avance y retroceso
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    // Manejador de eventos para avanzar en el slider
+    nextBtn.addEventListener('click', () => {
+        currentIndex++;
+        updateSlider();
+    });
+
+    // Manejador de eventos para retroceder en el slider
+    prevBtn.addEventListener('click', () => {
+        currentIndex--;
+        updateSlider();
+    });
+
+    function updateSlider() {
+        const maxIndex = Math.ceil(imageGrid.children.length - visibleImages);
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        } else if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+
+        const offset = -(currentIndex * imageWidth);
+        imageGrid.style.transform = `translateX(${offset}px)`;
+
+        // Mostrar u ocultar los botones según la posición
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === maxIndex;
+    }
+
+    // Inicializar el slider
+    updateSlider();
+
 
 /*Modal Equipos*/ 
 

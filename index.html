@@ -63,7 +63,8 @@
         <div class="nosotros_content">
             <img src="img/estantevita.jpg" class="nosotros_img" alt="Nosotros Image">
             <div class="nosotros_texto">
-                <h2>¿Quiénes <span class="morado">Somos?</span></h2>
+                <h2>¿Quiénes <span class="morado">Somos?</span><hr class="linea-nosotros"></h2>
+                
                 <p>En <span class="rosado">Fundación Vita</span>, nos dedicamos a mejorar la calidad de vida de personas con limitaciones funcionales a través de atención integral y apoyo personalizado. Nacida en marzo de 2024, Vita surge del compromiso y la experiencia personal de nuestra fundadora, quien, movida por vivencias familiares, decidió crear un <span class="rosado">espacio inclusivo y solidario</span> en la comuna de Los Ángeles. Con un equipo multidisciplinario de profesionales, ofrecemos <span class="rosado">terapias</span>, talleres y <span class="rosado">capacitaciones</span> que promueven la autonomía y el desarrollo personal de nuestros beneficiarios, contribuyendo a su <span class="rosado">inserción plena en la sociedad</span>.</p>
                 <a href="nosotros.html" class="btn-nosotros">Saber Más</a>
             </div>
@@ -72,29 +73,38 @@
 
 
     <!---Galeria -->
-    
     <section class="gallery-container">
         <div class="featured-image">
-            <img src="img/imgrid1.jpg" alt="Imagen destacada">
+            <img id="featured" src="img/imgrid1.jpg" alt="Imagen destacada">
         </div>
-        <div class="image-grid">
-            <div class="image-item">
-                <img src="img/imgrid2.jpg" alt="Imagen 1">
+    
+        <!-- Contenedor del slider con las imágenes pequeñas -->
+        <div class="image-slider">
+            <button class="prev-btn">&#10094;</button> <!-- Botón de retroceso -->
+            <div class="image-grid-container">
+                <div class="image-grid">
+                    <div class="image-item">
+                        <img src="img/imgrid2.jpg" alt="Imagen 1">
+                    </div>
+                    <div class="image-item">
+                        <img src="img/imgrid3.jpg" alt="Imagen 2">
+                    </div>
+                    <div class="image-item">
+                        <img src="img/imgrid4.jpg" alt="Imagen 3">
+                    </div>
+                    <div class="image-item">
+                        <img src="img/imgrid5.jpg" alt="Imagen 4">
+                    </div>
+                    <div class="image-item">
+                        <img src="img/imgrid6.jpg" alt="Imagen 5">
+                    </div>
+                    <!-- Añade más imágenes aquí si es necesario -->
+                </div>
             </div>
-            <div class="image-item">
-                <img src="img/imgrid3.jpg" alt="Imagen 2">
-            </div>
-            <div class="image-item">
-                <img src="img/imgrid4.jpg" alt="Imagen 3">
-            </div>
-            <div class="image-item">
-                <img src="img/imgrid5.jpg" alt="Imagen 4">
-            </div>
-            <div class="image-item">
-                <img src="img/imgrid6.jpg" alt="Imagen 5">
-            </div>
+            <button class="next-btn">&#10095;</button> <!-- Botón de avance -->
         </div>
     </section>
+    
 <!--
     <section class="section-card-info">
         <div class="div-card-info">
