@@ -1,3 +1,18 @@
+/*header cambia de color al bajar*/
+    // Selecciona el header (navbar)
+    const header = document.querySelector('.header');
+
+    // Función que se ejecuta al hacer scroll
+    window.onscroll = function() {
+        // Si el usuario ha hecho scroll más de 50px desde la parte superior
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            // Si el usuario vuelve a la parte superior, removemos la clase
+            header.classList.remove('scrolled');
+        }
+    };
+
 
 /*menu hamburguesa*/ 
 document.querySelector('.hamburger').addEventListener('click', function() {
