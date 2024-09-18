@@ -65,6 +65,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Configura las opciones para el IntersectionObserver
+    const options = {
+        root: null, // el viewport
+        threshold: 0.3 // 30% visible para disparar
+    };
+
+    // Crea una instancia de IntersectionObserver
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Si el contenedor de la galería está en pantalla, agrega la clase de animación
+                if (entry.target.classList.contains('gallery-container')) {
+                    entry.target.classList.add('animate-gallery');
+                }
+                
+                observer.unobserve(entry.target); // Dejar de observar una vez animado
+            }
+        });
+    }, options);
+
+    // Selecciona el contenedor de la galería y comienza a observarlo
+    const galleryContainer = document.querySelector('.gallery-container');
+    if (galleryContainer) {
+        observer.observe(galleryContainer);
+    }
+});
 
 /* Galería mostrar en pantalla grande*/ 
 
@@ -155,8 +182,5 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
-
-
-
 
 

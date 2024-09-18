@@ -12,6 +12,8 @@ body {
 
 
 }
+
+
 .header.scrolled {
     background-color: rgba(255, 255, 255, 1); /* Cambia a un color con opacidad */
     transition: background-color 0.3s ease;
@@ -563,15 +565,22 @@ body {
 
 /* Galería*/
 /* Contenedor de la galería */
+/* Estilo inicial para el contenedor de la galería */
 .gallery-container {
     display: grid;
     gap: 16px;
     width: 80%;
     max-width: 1200px;
     margin: 20px auto;
-    opacity: 0;
-    animation: zoomOut 1s ease forwards;
-    animation-delay: 1s;
+    opacity: 0; /* Inicialmente invisible para la animación */
+    transition: opacity 1s ease, transform 1s ease; /* Transición para opacidad y transformación */
+}
+
+/* Clase que se añadirá cuando el contenedor esté en vista */
+.animate-gallery {
+    opacity: 1; /* Hace visible el contenedor */
+    transform: scale(1); /* Puedes ajustar la transformación según la animación deseada */
+    animation: zoomOut 1s ease forwards; /* Aplica la animación */
 }
 /* Contenedor del slider */
 .image-slider {
