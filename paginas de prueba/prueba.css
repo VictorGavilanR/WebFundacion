@@ -151,11 +151,7 @@ body.dark-mode .switch .slider-darkmode:before {
     }
 }
 
-h1 {
-    text-align: center;
-    color: #8e44ad;
-    animation: fadeIn 1.5s ease-in-out;
-}
+
 
 .team-grid {
     display: grid;
