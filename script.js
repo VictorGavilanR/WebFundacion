@@ -1,18 +1,4 @@
 
-document.addEventListener('DOMContentLoaded', function () {
-    let observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target); // Dejar de observar una vez que la animación se ha activado
-            }
-        });
-    });
-
-    let nosotrosSection = document.querySelector('.nosotros');
-    observer.observe(nosotrosSection);
-});
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.slider');
@@ -53,48 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Función para cambiar el tema
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-}
-
-// Al cargar la página, establece el tema guardado en localStorage
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-
-    // Configura el botón para cambiar el tema
-    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-});
-
-
-
-let lastScrollTop = 0;
-
-window.addEventListener("scroll", function() {
-  const img = document.querySelector(".nosotros_img");
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop) {
-    // Scroll hacia abajo - rota a la derecha (5 grados)
-    img.style.transform += "rotate(3deg)";
-  } else {
-    // Scroll hacia arriba - rota a la izquierda (5 grados)
-    img.style.transform += "rotate(-3deg)";
-  }
-
-  lastScrollTop = scrollTop;
-});
-
-
-
 /*menu hamburguesa*/ 
 document.querySelector('.hamburger').addEventListener('click', function() {
     document.querySelector('.navbar').classList.toggle('active');
@@ -107,3 +51,44 @@ document.querySelector('.close').addEventListener('click', function() {
     document.querySelector('.hamburger').classList.remove('hidden');
     document.querySelector('.close').classList.add('hidden');
 });
+
+/* Animacion Nosotros*/
+document.addEventListener('DOMContentLoaded', function() {
+    const options = {
+        root: null, // el viewport
+        threshold: 0.3 // 10% visible para disparar
+    };
+
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Si la imagen está en pantalla, agregar la clase de animación
+                if (entry.target.classList.contains('nosotros_img')) {
+                    entry.target.classList.add('animate-slideRight');
+                }
+                
+                // Si el texto está en pantalla, agregar la clase de animación
+                if (entry.target.classList.contains('nosotros_texto')) {
+                    entry.target.classList.add('animate-slideLeft');
+                }
+
+                observer.unobserve(entry.target); // Dejar de observar una vez animado
+            }
+        });
+    }, options);
+
+    // Seleccionar los elementos que queremos observar
+    const img = document.querySelector('.nosotros_img');
+    const texto = document.querySelector('.nosotros_texto');
+
+    if (img) {
+        observer.observe(img);
+    }
+
+    if (texto) {
+        observer.observe(texto);
+    }
+});
+
+
+

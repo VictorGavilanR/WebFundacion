@@ -18,15 +18,15 @@
 
         <nav class="navbar">
             <a href="index.html" style="--i:1;" class="active">Home</a>
+            <a href="#nosotros" style="--i:4;">Nosotros</a>
             <a href="#" style="--i:2;">About</a>
             <a href="#" style="--i:3;">Contacto</a>
-            <a href="#" style="--i:4;">Nosotros</a>
             <a href="#" style="--i:5;">Donar</a>
         </nav>
 
         <div class="social-media">
             <a href="https://www.instagram.com/fundacionvitalosangeles/" target="_blank" style="--i:1;"><i class='bx bxl-instagram'></i></a>
-            <a href="#" style="--i:2;"><i class='bx bxl-instagram'></i></a>
+            <a href="#" target="_blank" style="--i:2;"><i class='bx bxl-whatsapp'></i></a>
             <a href="#" style="--i:3;"><i class='bx bxl-instagram'></i></a>
         </div>
 
@@ -45,7 +45,7 @@
             <h1>Fundación Vita</h1>
             <h3>"Promoviendo la inclusión y el bienestar de todos"</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa velit, porro facilis consequuntur officia esse minima! Fugit consequatur saepe explicabo nemo unde, ea, labore corrupti impedit itaque ipsum, repellat alias!Lorem</p>
-            <a href="#" class="btn">Saber Más</a>
+            <a href="#nosotros" class="btn">Saber Más</a>
         </div>
 
         <div class="home-img">
@@ -59,52 +59,43 @@
 
 
     <!--NOSOTROS-->
-    <section class="nosotros">
+    <section class="nosotros" id="nosotros">
         <div class="nosotros_content">
-            <img src="img/logo.png" class="nosotros_img" alt="Nosotros Image">
+            <img src="img/estantevita.jpg" class="nosotros_img" alt="Nosotros Image">
             <div class="nosotros_texto">
                 <h2>¿Quiénes <span class="morado">Somos?</span></h2>
                 <p>En <span class="rosado">Fundación Vita</span>, nos dedicamos a mejorar la calidad de vida de personas con limitaciones funcionales a través de atención integral y apoyo personalizado. Nacida en marzo de 2024, Vita surge del compromiso y la experiencia personal de nuestra fundadora, quien, movida por vivencias familiares, decidió crear un <span class="rosado">espacio inclusivo y solidario</span> en la comuna de Los Ángeles. Con un equipo multidisciplinario de profesionales, ofrecemos <span class="rosado">terapias</span>, talleres y <span class="rosado">capacitaciones</span> que promueven la autonomía y el desarrollo personal de nuestros beneficiarios, contribuyendo a su <span class="rosado">inserción plena en la sociedad</span>.</p>
-                <div class="nosotros-circulos">
-                    <div class="circulo">
-                        <img src="img/teamwork_4859784.png" alt="Imagen 1">
-                        <p>Equipo</p>
-                    </div>
-
-                    <div class="circulo">
-                        <img src="img/pencil_2606509.png" alt="Imagen 2">
-                        <p>Actividades</p>
-                    </div>
-                </div>
+                <a href="nosotros.html" class="btn-nosotros">Saber Más</a>
             </div>
         </div>
     </section>
 
+
+    <!---Galeria -->
     
-    <section class="gallery-section">
-        <h2>Galería</h2>
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="img/IMG_20240708_190835_552.webp" alt="Imagen 1">
+    <section class="gallery-container">
+        <div class="featured-image">
+            <img src="img/imgrid1.jpg" alt="Imagen destacada">
+        </div>
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="img/imgrid2.jpg" alt="Imagen 1">
             </div>
-            <div class="gallery-item">
-                <img src="img/IMG_20240708_190835_552.webp" alt="Imagen 2">
+            <div class="image-item">
+                <img src="img/imgrid3.jpg" alt="Imagen 2">
             </div>
-            <div class="gallery-item">
-                <img src="img/IMG_20240708_190835_552.webp" alt="Imagen 3">
+            <div class="image-item">
+                <img src="img/imgrid4.jpg" alt="Imagen 3">
             </div>
-            <div class="gallery-item">
-                <img src="img/IMG_20240708_190835_552.webp" alt="Imagen 4">
+            <div class="image-item">
+                <img src="img/imgrid5.jpg" alt="Imagen 4">
             </div>
-            <div class="gallery-item">
-                <img src="img/IMG_20240708_190835_552.webp" alt="Imagen 5">
-            </div>
-            <div class="gallery-item">
-                <img src="img/IMG_20240708_190835_552.webp" alt="Imagen 5">
+            <div class="image-item">
+                <img src="img/imgrid6.jpg" alt="Imagen 5">
             </div>
         </div>
     </section>
-
+<!--
     <section class="section-card-info">
         <div class="div-card-info">
             <h2>Con tu aporte</h2>
@@ -125,6 +116,26 @@
 
         </div>
     </section>
+-->
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-top">
+                <a href="index.html" class="footer-logo-container">
+                    <img src="img/logo.png" class="footer-logo" alt="Flowbite Logo" />
+                    <span class="footer-logo-text">Fundación | Vita</span>
+                </a>
+                <ul class="footer-links">
+                    <a href="index.html" class="active">Home</a>                    
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#" >About</a>
+                    <a href="#" >Contacto</a>
+                    <a href="#" >Donar</a>
+                </ul>
+            </div>
+            <hr class="footer-divider">
+            <span class="footer-bottom-text">© 2024 <a href="https://flowbite.com/" class="footer-link">Fundación | Vita</a>. Todos los derechos reservados.</span>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
