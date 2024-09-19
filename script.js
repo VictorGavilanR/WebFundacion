@@ -162,45 +162,23 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSlider();
 
 
-/// Función para abrir el modal
 // Función para abrir el modal
-function openModal(data) {
-    document.getElementById('modal-img').src = data.imagenSrc;
-    document.getElementById('modal-title').innerText = data.nombre;
-    document.getElementById('modal-description').innerText = data.cargo;
+function openModal(imageSrc, title, info) {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'flex'; // Mostrar modal
+    document.getElementById('modalImage').src = imageSrc; // Cambiar imagen
+    document.getElementById('modalTitle').innerText = title; // Cambiar título
+    document.getElementById('modalInfo').innerText = info; // Cambiar información
 
-    // Limpiar y agregar los servicios
-    const serviciosList = document.getElementById("modal-servicios");
-    serviciosList.innerHTML = ''; // Limpiar la lista actual
-    data.servicios.forEach(servicio => {
-        const li = document.createElement("li");
-        li.textContent = servicio;
-        serviciosList.appendChild(li);
+    // Cerrar modal al hacer clic fuera del contenido
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
     });
-
-    // Mostrar el modal
-    document.getElementById('modal').style.display = 'flex';
-    
-    // Deshabilitar el scroll de fondo
-    document.body.style.overflow = 'hidden';
 }
 
 // Función para cerrar el modal
 function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-    // Restaurar el scroll de fondo
-    document.body.style.overflow = 'auto';
+    document.getElementById('myModal').style.display = 'none'; // Ocultar modal
 }
-
-// Evento para cerrar el modal haciendo clic fuera del modal
-window.onclick = function(event) {
-    const modal = document.getElementById('modal');
-    if (event.target === modal) {
-        closeModal();
-    }
-}
-
-// Evento para cerrar el modal haciendo clic en la "X"
-document.querySelector('.modal-close').onclick = function() {
-    closeModal();
-};
