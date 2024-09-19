@@ -1249,3 +1249,148 @@ body {
     border-radius: 10px;
     margin-bottom: 20px;
 }
+
+/* Estilos para el formulario de contacto con mapa */
+.contact-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-wrapper {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px; /* Espacio entre el formulario y el mapa */
+}
+
+.contact-container,
+.map-container {
+    flex: 1;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-container h2 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #a8a7f7; /* Color pastel morado */
+}
+
+.input-group input {
+    background-color: #ffffff; /* Color pastel rojo */
+}
+
+.input-group textarea {
+    background-color: #ffffff; /* Color pastel azul */
+}
+
+.btn-submit {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    background-color: #ffdd87; /* Color pastel amarillo */
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #ffbd59; /* Color amarillo más oscuro */
+}
+
+/* Estilos para el mapa */
+.map-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.map-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.map-iframe {
+    flex: 1;
+    height: 100%; /* Hace que el iframe ocupe todo el espacio disponible */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-container {
+        padding: 20px;
+    }
+    
+    .contact-container h2 {
+        font-size: 28px;
+    }
+
+    .btn-submit {
+        font-size: 16px;
+    }
+
+    .map-container {
+        padding: 20px;
+    }
+
+    .map-iframe {
+        height: 300px;
+    }
+}
