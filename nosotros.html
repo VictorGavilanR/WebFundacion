@@ -20,7 +20,7 @@
             <a href="index.html" style="--i:1;" class="active">Home</a>
             <a href="index.html#nosotros" style="--i:4;">Nosotros</a>
             <a href="index.html#galeria" style="--i:2;">Galería</a>
-            <a href="#" style="--i:3;">Contacto</a>
+            <a href="index.html#contacto" style="--i:3;">Contacto</a>
             <a href="#" style="--i:5;">Donar</a>
         </nav>
 
@@ -99,60 +99,63 @@
 
     <div class="decoration"></div>
     <div class="container">
-        <h3 id="inicio"><span class="morado">Equipo comprometido </span> con la inclusión y desarrollo de personas neurodivergentes.</h3>
+        <h3 id="inicio"><span class="morado">Equipo comprometido</span> con la inclusión y desarrollo de personas neurodivergentes.</h3>
         <div class="team-grid">
-            <div class="team-member" onclick="openModal('img/equipodetrabajobarbara.png', 'Bárbara Oliva', 'Información detallada de Bárbara Oliva...')">
-                <img src="img/equipodetrabajobarbara.png" alt="Barbara Oliva">
+            <div class="team-member" onclick="openModal('fotos fundacion/Belen Benitez Castilla.jpg', 'Belen Benitez Castilla', 'Información detallada de Belen Benitez Castilla...')">
+                <img src="fotos fundacion/Belen Benitez Castilla.jpg" alt="Belen Benitez Castilla">
                 <h3>Bárbara Oliva</h3>
                 <p>texto</p>
             </div>
-            <div class="team-member" onclick="openModal('img/equipodetrabajotrabajadorasocial.png', 'Natalia Melo', 'Información detallada de Natalia Melo...')">
-                <img src="img/equipodetrabajotrabajadorasocial.png" alt="Natalia Melo">
+            <div class="team-member" onclick="openModal('fotos fundacion/Natalia Melo.jpg', 'Natalia Melo', 'Información detallada de Natalia Melo...')">
+                <img src="fotos fundacion/Natalia Melo.jpg" alt="Natalia Melo">
                 <h3>Natalia Melo</h3>
                 <p>texto</p>
             </div>
-            <div class="team-member" onclick="openModal('img/equipodetrabajofonoaudiologa.png', 'Francisca Cabrera', 'Información detallada de Francisca Cabrera...')">
-                <img src="img/equipodetrabajofonoaudiologa.png" alt="Francisca Cabrera">
-                <h3>Francisca Cabrera</h3>
+            <div class="team-member" onclick="openModal('fotos fundacion/felipebascur.jpg', 'Felipe Bascur', 'Información detallada de Felipe Bascur...')">
+                <img src="fotos fundacion/felipebascur.jpg" alt="Felipe Bascur">
+                <h3>Felipe Bascur</h3>
                 <p>texto</p>
             </div>
-            <div class="team-member" onclick="openModal('img/equipodetrabajokinesiologa.png', 'Geraldine Harper', 'Información detallada de Geraldine Harper...')">
-                <img src="img/equipodetrabajokinesiologa.png" alt="Geraldine Harper">
-                <h3>Geraldine Harper</h3>
+            <div class="team-member" onclick="openModal('fotos fundacion/jaqueline Constancio.jpg', 'Jaqueline Constancio', 'Información detallada de Jaqueline Constancio...')">
+                <img src="fotos fundacion/jaqueline Constancio.jpg" alt="Jaqueline Constancio">
+                <h3>Jaqueline Constancio</h3>
                 <p>texto</p>
             </div>
-            <div class="team-member" onclick="openModal('img/equipodetrabajokinesiologo.png', 'Alfredo Aguilera', 'Información detallada de Alfredo Aguilera...')">
-                <img src="img/equipodetrabajokinesiologo.png" alt="Alfredo Aguilera">
-                <h3>Alfredo Aguilera</h3>
-                <p>texto</p>
-            </div>
-            <div class="team-member" onclick="openModal('img/equipodetrabajopsico.png', 'Constanza Rodriguez', 'Información detallada de Constanza Rodriguez...')">
-                <img src="img/equipodetrabajopsico.png" alt="Constanza Rodriguez">
-                <h3>Constanza Rodriguez</h3>
-                <p>texto</p>
-            </div>
-            <div class="team-member" onclick="openModal('img/equipodetrabajopsicologa.png', 'Paola Avello', 'Información detallada de Paola Avello...')">
-                <img src="img/equipodetrabajopsicologa.png" alt="Paola Avello">
-                <h3>Paola Avello</h3>
-                <p>texto</p>
-            </div>
-            <div class="team-member" onclick="openModal('img/equipodetrabajotallerista.png', 'Maribel Albornoz', 'Información detallada de Maribel Albornoz...')">
-                <img src="img/equipodetrabajotallerista.png" alt="Maribel Albornoz">
-                <h3>Maribel Albornoz</h3>
-                <p>texto</p>
-            </div>
-            <div class="team-member" onclick="openModal('img/equipodetrabajoterapeuta.png', 'María Ignacia Carrasco', 'Información detallada de María Ignacia Carrasco...')">
-                <img src="img/equipodetrabajoterapeuta.png" alt="María Ignacia Carrasco">
-                <h3>María Ignacia Carrasco</h3>
-                <p>texto</p>
-            </div>
-            <div class="team-member" onclick="openModal('img/equipotrabajokarate.png', 'Mario Freixas', 'Información detallada de Mario Freixas...')">
-                <img src="img/equipotrabajokarate.png" alt="Mario Freixas">
-                <h3>Mario Freixas</h3>
-                <p>texto</p>
+            <<div class="team-member" onclick="openModal({
+                nombre: 'Juan Pérez',
+                cargo: 'Gerente de Ventas',
+                numeroRegistro: '12345',
+                imagenSrc: 'ruta-a-la-imagen.jpg',
+                servicios: ['Consultoría', 'Análisis de ventas', 'Estrategia de mercado']
+            })">
+                <img src="ruta-a-la-imagen.jpg" alt="Juan Pérez">
+                <h3>Juan Pérez</h3>
+                <p>Gerente de Ventas</p>
             </div>
         </div>
     </div>
+    
+<!-- Modal -->
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <img id="modal-img" src="" alt="Image" />
+        <div class="modal-text">
+            <h2 id="modal-title">Nombre</h2>
+            <p id="modal-description">Cargo</p>
+
+            <!-- Lista de servicios -->
+            <p><strong>Servicios:</strong></p>
+            <ul id="modal-servicios"></ul>
+
+            <!-- Número de registro -->
+            <p><strong>Número de Registro:</strong> <span id="modal-registro"></span></p>
+        </div>
+    </div>
+</div>
+
+
 
     <!--Footer-->
     <footer class="footer-container">

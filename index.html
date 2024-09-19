@@ -20,7 +20,7 @@
             <a href="index.html" style="--i:1;" class="active">Home</a>
             <a href="#nosotros" style="--i:4;">Nosotros</a>
             <a href="#galeria" style="--i:2;">Galería</a>
-            <a href="#" style="--i:3;">Contacto</a>
+            <a href="#contacto" style="--i:3;">Contacto</a>
             <a href="#" style="--i:5;">Donar</a>
         </nav>
 
@@ -107,29 +107,8 @@
         </div>
     </section>
     
-<!--
-    <section class="section-card-info">
-        <div class="div-card-info">
-            <h2>Con tu aporte</h2>
-            <p>En esta sección puedes acceder a la Memoria anual de Vita, revisar nuestros estados financieros y consultar en línea las atenciones que entregamos semanal y mensualmente en nuestros 14 institutos.</p>
-            <a href="#" class="btn-read-more">Leer más</a>
-
-        </div>
-        <div class="div-card-info">
-            <h2>Campaña Vita</h2>
-            <p>Aquí puedes conocer sobre Fundación Vita, cómo se organiza la campaña anual, nuestro modelo de recaudación y todo lo que hacemos para comunicar, convocar y promover una sociedad más inclusiva.</p>
-            <a href="#" class="btn-read-more">Leer más</a>
-
-        </div>
-        <div class="div-card-info">
-            <h2>Transparencia</h2>
-            <p>Encuentra información institucional detallada sobre Vita. Esta página la desarrollamos con el apoyo de Chile Transparente, con base en el modelo de reporte de Transparency International®.</p>
-            <a href="#" class="btn-read-more">Leer más</a>
-
-        </div>
-    </section>--> 
 <!-- Formulario -->
-<section class="contact-section">
+<section class="contact-section" id="contacto">
     <div class="contact-wrapper">
         <div class="contact-container">
             <h2>Contáctanos</h2>
@@ -137,15 +116,15 @@
             <form action="#" method="post">
                 <div class="input-group">
                     <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" placeholder="Ingrese Nombre" required>
                 </div>
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" placeholder="Ingrese un Email" required>
                 </div>
                 <div class="input-group">
                     <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" name="message" rows="5" required placeholder="Mensaje"></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Enviar</button>
             </form>

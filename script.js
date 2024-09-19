@@ -162,25 +162,45 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSlider();
 
 
-/*Modal Equipos*/ 
+/// Función para abrir el modal
+// Función para abrir el modal
+function openModal(data) {
+    document.getElementById('modal-img').src = data.imagenSrc;
+    document.getElementById('modal-title').innerText = data.nombre;
+    document.getElementById('modal-description').innerText = data.cargo;
 
-function openModal(imgSrc, title, description) {
-    document.getElementById('modal-img').src = imgSrc;
-    document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-description').innerText = description;
-    document.getElementById('modal').style.display = 'block';
+    // Limpiar y agregar los servicios
+    const serviciosList = document.getElementById("modal-servicios");
+    serviciosList.innerHTML = ''; // Limpiar la lista actual
+    data.servicios.forEach(servicio => {
+        const li = document.createElement("li");
+        li.textContent = servicio;
+        serviciosList.appendChild(li);
+    });
+
+    // Mostrar el modal
+    document.getElementById('modal').style.display = 'flex';
+    
+    // Deshabilitar el scroll de fondo
+    document.body.style.overflow = 'hidden';
 }
 
+// Función para cerrar el modal
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
+    // Restaurar el scroll de fondo
+    document.body.style.overflow = 'auto';
 }
 
-// Close the modal when clicking outside of it
+// Evento para cerrar el modal haciendo clic fuera del modal
 window.onclick = function(event) {
     const modal = document.getElementById('modal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
+    if (event.target === modal) {
+        closeModal();
     }
 }
 
-
+// Evento para cerrar el modal haciendo clic en la "X"
+document.querySelector('.modal-close').onclick = function() {
+    closeModal();
+};
