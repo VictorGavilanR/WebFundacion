@@ -14,9 +14,28 @@ body {
 
 }
 
+/* Personaliza el scroll */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho del scroll */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffabb4; /* Color del scroll */
+    border-radius: 10px; /* Radio del scroll */
+    border: 3px solid #f1f1f1; /* Color de los bordes */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff8792; /* Color del scroll al pasar el ratón */
+}
+
 
 .header.scrolled {
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #fffefe 100%);
         transition: background-color 0.3s ease;
 }
 
