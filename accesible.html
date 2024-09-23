@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accesibilidad</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+  <!-- Botón flotante para abrir el menú de accesibilidad -->
+  <div class="accessibility-button" onclick="toggleAccessibilityMenu()">
+    <i class='bx bx-universal-access' style='color:#ffffff'  ></i>
+  </div>
+
+  <!-- Menú de accesibilidad -->
+  <div class="accessibility-menu" id="accessibility-menu">
+    <div class="close-button" onclick="toggleAccessibilityMenu()"><i class='bx bx-x'></i></div>
+    <div class="menu-options">
+      <div class="option">
+        <button onclick="adjustTextSize('increase')">A+</button>
+        <p>Agrandar</p>
+      </div>
+      <div class="option">
+        <button onclick="adjustTextSize('decrease')">A-</button>
+        <p>Disminuir</p>
+      </div>
+      <div class="option">
+        <button onclick="toggleContrast()"><i class='bx bxs-paint'></i></button>
+        <p>Contraste</p>
+      </div>
+      <div class="option">
+        <button onclick="highlightInteractiveElements()"><i class='bx bx-highlight' ></i></button>
+        <p>Resaltar</p>
+      </div>
+      <div class="option">
+        <button onclick="toggleCursor()"><i class='bx bx-navigation'></i></button>
+        <p>Cursor</p>
+      </div>
+      <div class="option">
+        <button onclick="activateReading()"><i class='bx bx-volume-full'></i></button>
+        <p>Audio Lectura</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="accesible.js"></script>
+</body>
+</html>
+
+
+
+<style>
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Botón de accesibilidad flotante */
+.accessibility-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #c6a4cf;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 30px;
+}
+
+/* Menú de accesibilidad */
+.accessibility-menu {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background-color: #c6a4cf;
+  padding: 20px 0;
+  text-align: center;
+  transition: bottom 0.5s;
+  z-index: 999;
+}
+
+.accessibility-menu.open {
+  bottom: 0;
+}
+
+.menu-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.option button {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #c6a4cf;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.option p {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c6a4cf;
+  color: white;
+  font-size: 30px;
+  padding: 10px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+</style>

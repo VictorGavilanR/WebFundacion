@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="style.css">
+    <title>Fundación | Vita</title>
+
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" href="/img/logo.png">
 
@@ -15,7 +17,7 @@
             <img src="img/logo.png">
         </a>
 
-        <nav class="navbar">
+        <nav class="navbar ">
             <a href="index.html" style="--i:1;" class="active">Home</a>
             <a href="#nosotros" style="--i:2;">Nosotros</a>
             <a href="#galeria" style="--i:3;">Galería</a>
@@ -45,7 +47,9 @@
         <div class="home-content">
             <h1>Fundación Vita</h1>
             <h3>"Promoviendo la inclusión y el bienestar de todos"</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa velit, porro facilis consequuntur officia esse minima! Fugit consequatur saepe explicabo nemo unde, ea, labore corrupti impedit itaque ipsum, repellat alias!Lorem</p>
+            <p>En la Fundación Vita promovemos la inclusión de personas neurodivergentes, fomentando su desarrollo integral mediante oportunidades equitativas. Utilizamos el arte y la cultura como herramientas para mejorar su bienestar y participación. Ofrecemos apoyo terapéutico y espacios formativos que benefician a nuestros usuarios y sus familias, con un enfoque en la Neurodiversidad y los derechos. Nuestro equipo y voluntarios se dedican a proyectos inclusivos que celebran la diversidad humana.
+
+            </p>
             <a href="nosotros.html"><button  class="button">Saber Más</button></a>
         </div>
 
@@ -139,25 +143,89 @@
     </div>
 </section>
 
-    <footer class="footer-container">
-        <div class="footer-content">
-            <div class="footer-top">
-                <a href="index.html" class="footer-logo-container">
-                    <img src="img/logo.png" class="footer-logo" alt="Flowbite Logo" />
-                    <span class="footer-logo-text">Fundación | Vita</span>
-                </a>
-                <ul class="footer-links">
-                    <a href="index.html" class="active">Home</a>                    
-                    <a href="#nosotros">Nosotros</a>
-                    <a href="#" >About</a>
-                    <a href="#" >Contacto</a>
-                    <a href="#" >Donar</a>
+
+<!--FOOTER-->
+<footer class="footer-area">
+
+    <div class="main">
+        <div class="footer">
+            <div class="single-footer">
+                <h4>About Us</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, adipisci alias non laboriosam deserunt reprehenderit provident ab earum vero tempore dolorem facere eveniet fugit quo sequi magnam necessitatibus sapiente magni.</p>
+                <div class="footer-social">
+                    <a href=""><i class='bx bxl-facebook'></i></a>
+                    <a href=""><i class='bx bxl-instagram' ></i></a>
+                    <a href=""><i class='bx bxl-tiktok' ></i></a>
+                </div>
+            </div>
+            <div class="single-footer">
+                <h4>main menu</h4>
+                <ul>
+                    <li><a href=""><i class='bx bx-chevron-right' ></i>Home</a></li>
+                    <li><a href=""><i class='bx bx-chevron-right' ></i>Nosotros</a></li>
+                    <li><a href=""><i class='bx bx-chevron-right' ></i>Galería</a></li>
+                    <li><a href=""><i class='bx bx-chevron-right' ></i>Contacto</a></li>
                 </ul>
             </div>
-            <hr class="footer-divider">
-            <span class="footer-bottom-text">© 2024 <a href="https://flowbite.com/" class="footer-link">Fundación | Vita</a>. Todos los derechos reservados.</span>
+            <div class="single-footer">
+                <h4>quick links</h4>
+                <ul>
+                    <li><a href=""><i class='bx bx-chevron-right' ></i>privacy policy</a></li>
+                    <li><a href=""><i class='bx bx-chevron-right' ></i>terms & condition</a></li>
+                    <li><a href=""><i class='bx bx-chevron-right' ></i>disclame</a></li>
+                </ul>
+            </div>
+            <div class="single-footer">
+                <h4>contact us</h4>
+                <ul>
+                    <li><a href=""><i class='bx bx-map' ></i>>direccion #3432</a></li>
+                    <li><a href=""><i class='bx bx-mobile' ></i>+56999999</a></li>
+                    <li><a href=""><i class='bx bx-envelope' ></i>vita@gmail.com</a></li>
+                    <li><a href=""><i class='bx bx-globe' ></i>www.vita.com</a></li>
+                </ul>
+            </div>
         </div>
-    </footer>
+        <div class="copy"
+        <p>&copy; 2024 todos los derechos reservados</p>
+    </div>
+</footer>
+
+  <!-- Botón flotante para abrir el menú de accesibilidad -->
+  <div class="accessibility-button" onclick="toggleAccessibilityMenu()">
+    <i class='bx bx-universal-access' style='color:#ffffff'  ></i>
+  </div>
+
+  <!-- Menú de accesibilidad -->
+  <div class="accessibility-menu" id="accessibility-menu">
+    <div class="close-button" onclick="toggleAccessibilityMenu()"><i class='bx bx-x'></i></div>
+    <div class="menu-options">
+      <div class="option">
+        <button onclick="adjustTextSize('increase')">A+</button>
+        <p>Agrandar</p>
+      </div>
+      <div class="option">
+        <button onclick="adjustTextSize('decrease')">A-</button>
+        <p>Disminuir</p>
+      </div>
+      <div class="option">
+        <button onclick="toggleContrast()"><i class='bx bxs-paint'></i></button>
+        <p>Contraste</p>
+      </div>
+      <div class="option">
+        <button onclick="highlightInteractiveElements()"><i class='bx bx-highlight' ></i></button>
+        <p>Resaltar</p>
+      </div>
+      <div class="option">
+        <button onclick="toggleCursor()"><i class='bx bx-navigation'></i></button>
+        <p>Cursor</p>
+      </div>
+      
+      <div class="option">
+        <button onclick="activateReading()"><i class='bx bx-volume-full'></i></button>
+        <p>Audio Lectura</p>
+      </div>
+    </div>
+  </div>
 
     <script src="script.js"></script>
 </body>
