@@ -250,3 +250,46 @@ function activateReading() {
     readingActive = false;
   };
 }
+
+
+/*Active navbar*/ 
+// Seleccionar todas las secciones que quieres observar
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar a");
+
+// Crear un IntersectionObserver
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Remover la clase 'active' de todos los enlaces
+      navLinks.forEach(link => link.classList.remove("active"));
+      
+      // Añadir la clase 'active' al enlace correspondiente
+      const id = entry.target.getAttribute("id");
+      document.querySelector(`.navbar a[href="#${id}"]`).classList.add("active");
+    }
+  });
+}, {
+  threshold: 0.7,  // El 70% de la sección debe estar visible
+});
+
+// Observar cada sección
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+// Marcar "Home" como activo si la página está en la parte superior
+window.addEventListener("load", () => {
+  if (window.scrollY === 0) {
+    navLinks.forEach(link => link.classList.remove("active"));
+    document.querySelector('.navbar a[href="index.html"]').classList.add("active");
+  }
+});
+
+// Alternativa para detectar el desplazamiento hacia la parte superior y activar "Home"
+window.addEventListener("scroll", () => {
+  if (window.scrollY === 0) {
+    navLinks.forEach(link => link.classList.remove("active"));
+    document.querySelector('.navbar a[href="index.html"]').classList.add("active");
+  }
+});

@@ -10,7 +10,13 @@
 body {
     overflow-x: hidden;
 
+    background-color: #FFFFFF;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23D4A5FF' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23D4A5FF'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+
 }
+
+
+
 
 /* Estilos de contraste alto */
 /* Modo normal */
@@ -770,88 +776,11 @@ body {
 }
 
 
-
-
-/* Card Informacion */
-.section-card-info {
-    width: 1200px;
-    height: 400px;
-    margin: 200px auto;
-    display: flex;
-    justify-content: space-between; /* Espaciado igual entre los divs */
-    gap: 20px; /* Espaciado adicional entre los divs */
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
-    -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
-    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.49);
-    z-index: 2;
-    box-sizing: border-box; /* Para que el padding no afecte el tamaño */
-}
-
-.div-card-info {
-    width: calc(33.33% - 20px); /* Tres columnas con espacio entre ellas */
-    background-color: #007BFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Alinea el contenido al principio (arriba) */
-    align-items: flex-start; /* Alinea el contenido a la izquierda */
-    border-radius: 10px;
-    padding: 20px; /* Aumentar el padding para más espacio interior */
-    margin: 10px;
-}
-
-.section-card-info .div-card-info:nth-child(1) {
-    background-color: #D7BCE8; /* Azul */
-}
-
-.section-card-info .div-card-info:nth-child(2) {
-    background-color: #FFB3B3; /* Verde */
-}
-
-.section-card-info .div-card-info:nth-child(3) {
-    background-color: #ADD8E6; /* Amarillo */
-}
-
-/* Ajuste del contenido */
-.div-card-info h2 {
-    color: #ffffff;
-    font-size: 30px;
-    font-weight: bolder;
-    font-family: "Poppins", sans-serif;
-    margin-bottom: 5px; /* Reducir margen inferior */
-    text-align: left; /* Alinea el texto a la izquierda */
-}
-
-.div-card-info p {
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 500;
-    font-family: "Poppins", sans-serif;
-    margin-top: 0; /* Eliminar margen superior */
-    text-align: left; /* Alinea el texto a la izquierda */
-}
-
-/* Estilos del botón "Leer más" */
-.btn-read-more {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    background-color: #8983f7;
-    transition: background-color 0.3s ease;
-    text-align: left; /* Alinea el botón a la izquierda */
-}
-
 /* Footer */
 .footer-area {
     margin-top: 100px;
     padding: 100px 0;
-    color: #000;
+    color: #ffffff;
     position: relative;
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23C6A4CF"><rect fill="%23FFF" width="100%" height="100%"/><path d="M0 1v99c134.3 0 153.7-99 296-99H0Z" opacity=".5"></path><path d="M1000 4v86C833.3 90 833.3 3.6 666.7 3.6S500 90 333.3 90 166.7 4 0 4h1000Z" opacity=".5"></path><path d="M617 1v86C372 119 384 1 196 1h421Z" opacity=".5"></path><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></svg>');
     background-repeat: no-repeat;
@@ -874,6 +803,7 @@ body {
 }
 .single-footer{
     width: 230px;
+    
 }
 .single-footer:first-child{
     width: 400px;
@@ -891,19 +821,28 @@ body {
     margin-bottom: 10px;
     position: relative;
     padding-left: 20px;
+    
+}
+.single-footer a{
+    text-decoration: none;
+
+}
+.single-footer a:hover{
+   color:#8983f7;
 }
 
 
 .single-footer ul li a{
-    color: #333;
+    color: #070707;
     text-transform: capitalize;
+
 }
 
 .single-footer ul li a i{
     position: absolute;
     left: 0;
     top: 5px;
-    color: #333;
+    color: #000000;
 
 }
 
@@ -923,11 +862,69 @@ body {
     margin-right: 10px;
 }
 
+.footer-social,  a:hover{
+    color: #673ab7;
+    border-color:#673ab7 ;
+
+}
+
 .copy{
     text-align: center;
     text-transform: capitalize ;
     margin-top: 50px;
 }
+
+
+/* Estilos para pantallas medianas (tabletas y más pequeñas) */
+@media (max-width: 992px) {
+    .main {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .footer {
+        justify-content: space-between;
+    }
+
+    .single-footer {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .single-footer:first-child {
+        width: 100%;
+    }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 576px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .single-footer {
+        width: 100%;
+        text-align: center;
+    }
+
+    .single-footer ul {
+        padding-left: 0;
+    }
+
+    .single-footer ul li {
+        padding-left: 0;
+    }
+
+    .footer-social {
+        text-align: center;
+    }
+
+    .footer-social a {
+        margin-right: 5px;
+    }
+}
+
 
 
 /*span*/
@@ -1431,9 +1428,9 @@ body {
 /* Botón de accesibilidad flotante */
 .accessibility-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 120px;
     right: 20px;
-    background-color: #9921bb;
+    background-color: #673ab7;
     border-radius: 50%;
     width: 60px;
     height: 60px;
