@@ -1,4 +1,4 @@
-/* Estilos para el cuerpo */
+/* Estilos generales */
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f0f4f8;
@@ -6,75 +6,15 @@ body {
     padding: 0;
 }
 
-/* Estilo general para los títulos */
 h2 {
-    text-align: center;
     color: #333;
-    margin-top: 20px;
-}
-
-/* Estilos de la tabla de usuarios */
-.users-table {
-    width: 80%;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.users-table table {
-    width: 100%;
-    border-collapse: collapse;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.users-table th, .users-table td {
-    padding: 12px;
-    border: 1px solid #ddd;
-}
-
-.users-table th {
-    background-color: #f8f8f8;
-    font-weight: bold;
-    color: #333;
-}
-
-.users-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Estilo para los botones de acciones */
-.edit-btn, .delete-btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    color: white;
-    margin: 0 5px;
-}
-
-.edit-btn {
-    background-color: #009688;
-}
-
-.edit-btn:hover {
-    background-color: #00796b;
-}
-
-.delete-btn {
-    background-color: #e53935;
-}
-
-.delete-btn:hover {
-    background-color: #d32f2f;
-}
-
-/* Mejorar el aspecto de los formularios */
+/* Estilos del formulario */
 .team-form {
-    width: 50%;
+    width: 100%;
+    max-width: 500px;
     margin: 40px auto;
     padding: 20px;
     background-color: white;
@@ -83,30 +23,46 @@ h2 {
 }
 
 .team-form label {
-    display: block;
     font-weight: bold;
-    margin-bottom: 5px;
     color: #333;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .team-form input[type="text"],
-.team-form textarea,
-.team-form input[type="file"] {
-    width: 100%;
+.team-form input[type="file"],
+.team-form textarea {
     padding: 10px;
-    margin-bottom: 15px;
     border: 2px solid #ccc;
     border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
+}
+
+.team-form input[type="text"]:focus,
+.team-form input[type="file"]:focus,
+.team-form textarea:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 6px 0 dodgerblue;
+}
+
+.team-form textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 .team-form input[type="submit"] {
-    padding: 12px 20px;
-    background-color: #60a100;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
+    padding: 12px;
     font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #60a100;
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
 }
 
 .team-form input[type="submit"]:hover {

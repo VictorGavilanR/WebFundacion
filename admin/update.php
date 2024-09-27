@@ -1,49 +1,43 @@
 <?php
-
+// Conexión a la base de datos
 include('connection.php');
 $con = connection();
 
-$id=$_GET['id'];
+// Obtener los datos del formulario
+$id = $_POST['id'];
+$nombre = $_POST['nombre'];
+$n_identificacion = $_POST['n_identificacion'];
+$profesion = $_POST['profesion'];
+$servicios = $_POST['servicios'];
+$rol_id = $_POST['rol_id'];
 
-$sql = "SELECT * FROM users WHERE id='$id'";
+// Manejo de la imagen
+$imagen = $_FILES['imagen']['name'];
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($imagen);
+
+// Verificar si se subió una nueva imagen
+if ($imagen) {
+    // Mover la nueva imagen a la carpeta de destino
+    if (move_uploaded_file($_FILES['imagen']['tmp_name'], $target_file)) {
+        // Actualizar consulta con la nueva imagen
+        $sql = "UPDATE usuarios SET nombre='$nombre', n_identificacion='$n_identificacion', profesion='$profesion', servicios='$servicios', imagen='$target_file', rol_id='$rol_id' WHERE id='$id'";
+    } else {
+        die("Error al subir la imagen");
+    }
+} else {
+    // Consulta SQL sin cambiar la imagen
+    $sql = "UPDATE usuarios SET nombre='$nombre', n_identificacion='$n_identificacion', profesion='$profesion', servicios='$servicios', rol_id='$rol_id' WHERE id='$id'";
+}
+
+// Ejecutar la consulta
 $query = mysqli_query($con, $sql);
-$row = mysqli_fetch_array($query);
+
+// Verificar si la consulta fue exitosa
+if ($query) {
+    // Redirigir a la página de lista de usuarios
+    header("Location: index.php");
+} else {
+    die("Error en la actualización: " . mysqli_error($con));
+}
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Usuario</title>
-    <!-- Vinculando correctamente el archivo CSS -->
-    <link href="admin.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Sección de formulario de equipo -->
-    <div class="team-form">
-        <h2>Editar Usuario</h2>
-        <form action="edit_user.php" method="POST" enctype="multipart/form-data">
-
-            <input type="hidden" name="id" value="<?= $row['id']?>">
-
-            <label for="name">Nombre:</label>
-            <input type="text"  name="nombres" placeholder="Nombre del miembro" value="<?= $row['nombres']?>" required>
-
-            <label for="name">Apellido:</label>
-            <input type="text"  name="apellido" placeholder="Ingrese Apellido" value="<?= $row['apellido']?> " required>
-
-            <label for="profession">Profesión:</label>
-            <input type="text"  name="profesion" placeholder="Profesión del miembro" value="<?= $row['profesion']?>" required>
-
-            <label for="team-image">Imagen:</label>
-            <input type="file"  name="imagen" accept="image/*" value="<?= $row['imagen']?>" required>
-
-            <label for="services">Servicios:</label>
-            <textarea name="servicios" placeholder="Servicios que ofrece" value="<?= $row['servicios']?>" required></textarea>
-
-
-
-            <input type="submit" value="Actualizar Usuario">
-        </form>
-    </div>
