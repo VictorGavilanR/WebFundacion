@@ -1,70 +1,131 @@
-/* Estilos generales */
+/* General */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f0f4f8;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 h2 {
     color: #333;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Estilos del formulario */
+/* Estilos para el formulario */
 .team-form {
-    width: 100%;
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .team-form label {
-    font-weight: bold;
-    color: #333;
     display: block;
     margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
 }
 
 .team-form input[type="text"],
 .team-form input[type="file"],
+.team-form select,
 .team-form textarea {
+    width: calc(100% - 20px);
     padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    font-size: 14px;
-    width: 100%;
-    transition: border-color 0.3s;
     margin-bottom: 15px;
-}
-
-.team-form input[type="text"]:focus,
-.team-form input[type="file"]:focus,
-.team-form textarea:focus {
-    border-color: dodgerblue;
-    box-shadow: 0 0 6px 0 dodgerblue;
-}
-
-.team-form textarea {
-    resize: vertical;
-    min-height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .team-form input[type="submit"] {
-    padding: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: #60a100;
-    color: white;
+    width: 100%;
+    background-color: #4CAF50;
+    color: #fff;
     border: none;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .team-form input[type="submit"]:hover {
-    background-color: #4f8000;
+    background-color: #45a049;
+}
+
+/* Estilos para la tabla de usuarios */
+.users-table {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.users-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table th, 
+.users-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.users-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+.users-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.users-table img {
+    border-radius: 4px;
+    max-width: 50px;
+}
+
+/* Estilos para los enlaces de acción */
+.users-table--edit, 
+.users-table--delete {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.users-table--edit {
+    background-color: #4CAF50;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.users-table--edit:hover {
+    background-color: #45a049;
+}
+
+.users-table--delete {
+    background-color: #f44336;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.users-table--delete:hover {
+    background-color: #e53935;
 }

@@ -1454,7 +1454,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     transition: bottom 0.5s;
     z-index: 999;
   }
-  
+
   .accessibility-menu.open {
     bottom: 0;
   }
@@ -1462,7 +1462,15 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   .menu-options {
     display: flex;
     justify-content: space-around;
+    
   }
+  @media (max-width: 768px) {
+    .menu-options{
+        flex-direction: column;
+    }
+
+  }
+  
   
   .option {
     display: flex;
@@ -1526,16 +1534,6 @@ body.high-contrast img {
     opacity: 0.6; /* Opacidad para las imágenes */
 }
 
-      /*CURSORR*/
-      .custom-cursor {
-        cursor: url('img/cursor.png') 16 16, auto; /* Ajusta las coordenadas del punto activo del cursor (16,16 para centrado) */
-    }
-    
-    /* Asegurarse de que el cursor personalizado se aplique a todo dentro de la clase */
-    .custom-cursor * {
-        cursor: url('img/cursor.png') 16 16, auto;
-    }
-
 /* Interactive*/
 
 .interactive {
@@ -1543,3 +1541,7 @@ body.high-contrast img {
     background-color: #f0f0f0;  /* Fondo claro */
     transition: background-color 0.3s ease, outline 0.3s ease;
 }
+
+
+/*modal*/
+

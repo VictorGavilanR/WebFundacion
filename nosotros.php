@@ -1,32 +1,49 @@
 <?php
-include('admin/connection.php'); // Asegúrate de que la ruta sea correcta
-$con = connection();
+// Incluir el archivo que contiene la función de conexión
+include 'admin/connection.php'; // Cambia 'ruta/al/archivo/connection.php' por la ruta correcta a tu archivo
 
-// Consulta para obtener la información de los usuarios
-$sql = "SELECT * FROM users"; // Cambia "users" por la tabla que necesites
-$query = mysqli_query($con, $sql);
+// Llamar a la función para obtener la conexión
+$conexion = connection();
 
-// Verificar conexión
-if ($con->connect_error) {
-    die("Conexión fallida: " . $con->connect_error);
+// Verificar si la conexión se realizó correctamente
+if (!$conexion) {
+    die("Conexión fallida: " . mysqli_connect_error());
 } else {
-    echo "Conexión exitosa a la base de datos.";
+    echo "Conexión exitosa a la base de datos<br>";
 }
 
+// Consultas para obtener los usuarios por rol
+$queryDirectiva = "SELECT * FROM usuarios WHERE rol_id = 1"; // Rol de Directiva (Fundadora)
+$queryEquipo = "SELECT * FROM usuarios WHERE rol_id = 2"; // Rol de Equipo
 
-// Consultar los registros de la tabla 'users'
-$sql = "SELECT id, nombres, apellido, profesion, imagen, servicios FROM users";
-$result = $con->query($sql);
-
-if (!$result) {
-    die("Error en la consulta: " . $con->error);
+// Ejecutar las consultas y verificar si se ejecutaron correctamente
+$resultDirectiva = mysqli_query($conexion, $queryDirectiva);
+if (!$resultDirectiva) {
+    die("Error en la consulta Directiva: " . mysqli_error($conexion));
+} else {
+    echo "Consulta de Directiva ejecutada correctamente<br>";
 }
-//muestra errores
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
+$resultEquipo = mysqli_query($conexion, $queryEquipo);
+if (!$resultEquipo) {
+    die("Error en la consulta Equipo: " . mysqli_error($conexion));
+} else {
+    echo "Consulta de Equipo ejecutada correctamente<br>";
+}
+
+// Verificar si hay resultados y mostrarlos
+if (mysqli_num_rows($resultDirectiva) > 0) {
+    echo "Usuarios con rol 'Directiva' encontrados: " . mysqli_num_rows($resultDirectiva) . "<br>";
+} else {
+    echo "No se encontraron usuarios con rol 'Directiva'<br>";
+}
+
+if (mysqli_num_rows($resultEquipo) > 0) {
+    echo "Usuarios con rol 'Equipo' encontrados: " . mysqli_num_rows($resultEquipo) . "<br>";
+} else {
+    echo "No se encontraron usuarios con rol 'Equipo'<br>";
+}
 ?>
-
-
 
 
 
@@ -136,93 +153,155 @@ ini_set('display_errors', 1);
     </div>
 
 
-
-<!-- Nueva Sección -->
+<!-- Sección Directiva/Fundadora -->
 <div class="decoration"></div>
 <div class="container">
-    <h3 id="nueva-seccion"><span class="morado">Fundadora</h3>
+    <h3 id="tercera-seccion"><span class="morado">Fundadora</span></h3>
     <div class="team-grid">
-        <div class="team-member" onclick="openModal('fotos fundacion/miembro1.jpg', 'Miembro 1', 'Información detallada de Miembro 1...')">
-            <img src="fotos fundacion/miembro1.jpg" alt="Miembro 1">
-            <h3>Miembro 1</h3>
-            <p>Texto</p>
-        </div>
+        <?php
+        // Mostrar los usuarios con rol 'Directiva'
+        while ($row = mysqli_fetch_assoc($resultDirectiva)) {
+            // Crear la ruta a partir de la base de datos
+            $imagePath = 'admin/' . $row['imagen'];
+
+            // Mostrar el contenedor del miembro del equipo
+            echo "<div class='team-member' onclick=\"openModal('" . $imagePath . "', '" . $row['nombre'] . "', '" . $row['profesion'] . "')\">";
+
+            // Mostrar la imagen con la ruta correcta
+            echo "<img src='" . $imagePath . "' alt='" . $row['nombre'] . "'>";
+
+            // Mostrar el nombre y la profesión del usuario
+            echo "<h3>" . $row['nombre'] . "</h3>";
+            echo "<p>" . $row['profesion'] . "</p>";
+            echo "</div>";
+        }
+        ?>
     </div>
 </div>
 
 
-<!-- Tercera Sección -->
-<div class="decoration"></div>
-<div class="container">
-    <h3 id="tercera-seccion"><span class="morado">Directorio</h3>
-    <div class="team-grid">
-        <div class="team-member" onclick="openModal('fotos fundacion/miembro7.jpg', 'Miembro 7', 'Información detallada de Miembro 7...')">
-            <img src="fotos fundacion/miembro7.jpg" alt="Miembro 7">
-            <h3>Miembro 7</h3>
-            <p>Texto</p>
-        </div>
-    </div>
-</div>
+
+
 
 <div class="decoration"></div>
-<div class="container">
-    <h3 id="tercera-seccion"><span class="morado">Equipo</h3>
-    <div class="team-grid">
-        <div class="team-member" onclick="openModal('fotos fundacion/miembro7.jpg', 'Miembro 7', 'Información detallada de Miembro 7...')">
-            <img src="fotos fundacion/miembro7.jpg" alt="Miembro 7">
-            <h3>Miembro 7</h3>
-            <p>Texto</p>
+    <div class="container">
+        <h3 id="tercera-seccion"><span class="morado">Equipo</span></h3>
+        <div class="team-grid" id="teamGrid">
+            <?php
+            // Mostrar los usuarios con rol 'Directiva'
+            while ($row = mysqli_fetch_assoc($resultEquipo)) {
+                // Crear la ruta a partir de la base de datos
+                $imagePath = 'admin/' . $row['imagen'];
+
+                // Mostrar el contenedor del miembro del equipo
+                echo "<div class='team-member' data-image='" . $imagePath . "' data-name='" . $row['nombre'] . "' data-profession='" . $row['profesion'] . "'>";
+
+                // Mostrar la imagen con la ruta correcta
+                echo "<img src='" . $imagePath . "' alt='" . $row['nombre'] . "'>";
+
+                // Mostrar el nombre y la profesión del usuario
+                echo "<h3>" . $row['nombre'] . "</h3>";
+                echo "<p>" . $row['profesion'] . "</p>";
+                echo "</div>";
+            }
+            ?>
         </div>
     </div>
-</div>
+
+    <!-- Modal -->
+    <div id="teamModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <h3 id="modalName"></h3>
+            <p id="modalProfession"></p>
+        </div>
+    </div>
+
 
 
     <!--Footer-->
     <footer class="footer-area">
-    <div class="main">
-        <div class="footer">
-            <div class="single-footer">
-                <h4>About Us</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, adipisci alias non laboriosam deserunt reprehenderit provident ab earum vero tempore dolorem facere eveniet fugit quo sequi magnam necessitatibus sapiente magni.</p>
-                <div class="footer-social">
-                    <a href=""><i class='bx bxl-facebook'></i></a>
-                    <a href=""><i class='bx bxl-instagram'></i></a>
-                    <a href=""><i class='bx bxl-tiktok'></i></a>
-                </div>
-            </div>
-            <div class="single-footer">
-                <h4>Main Menu</h4>
-                <ul>
-                    <li><a href=""><i class='bx bx-chevron-right'></i>Home</a></li>
-                    <li><a href=""><i class='bx bx-chevron-right'></i>Nosotros</a></li>
-                    <li><a href=""><i class='bx bx-chevron-right'></i>Galería</a></li>
-                    <li><a href=""><i class='bx bx-chevron-right'></i>Contacto</a></li>
-                </ul>
-            </div>
-            <div class="single-footer">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href=""><i class='bx bx-chevron-right'></i>Privacy Policy</a></li>
-                    <li><a href=""><i class='bx bx-chevron-right'></i>Terms & Condition</a></li>
-                    <li><a href=""><i class='bx bx-chevron-right'></i>Disclaimer</a></li>
-                </ul>
-            </div>
-            <div class="single-footer">
-                <h4>Contact Us</h4>
-                <ul>
-                    <li><a href=""><i class='bx bx-map'></i> Dirección #3432</a></li>
-                    <li><a href=""><i class='bx bx-mobile'></i> +56999999</a></li>
-                    <li><a href=""><i class='bx bx-envelope'></i> vita@gmail.com</a></li>
-                    <li><a href=""><i class='bx bx-globe'></i> www.vita.com</a></li>
-                </ul>
+
+<div class="main">
+    <div class="footer">
+        <div class="single-footer">
+            
+            <h4>Fundación Vita</h4>
+            <p>"Promoviendo la inclusión y el bienestar de todos"</p>
+            <div class="footer-social">
+                <a href=""><i class='bx bxl-facebook'></i></a>
+                <a href=""><i class='bx bxl-instagram' ></i></a>
+                <a href=""><i class='bx bxl-tiktok' ></i></a>
+
             </div>
         </div>
-        <!-- Cerrar correctamente la etiqueta 'div.copy' -->
-        <div class="copy">
-            <p>&copy; 2024 Todos los derechos reservados</p>
+        <div class="single-footer">
+            <h4>Menú</h4>
+            <ul>
+                <li><a href="index.html"><i class='bx bx-chevron-right' ></i>Home</a></li>
+                <li><a href="index.html#nosotros"><i class='bx bx-chevron-right' ></i>Nosotros</a></li>
+                <li><a href="index.html#galeria"><i class='bx bx-chevron-right' ></i>Galería</a></li>
+                <li><a href="index.html#contacto"><i class='bx bx-chevron-right' ></i>Contacto</a></li>
+            </ul>
+        </div>
+        <div class="single-footer">
+            <h4>quick links</h4>
+            <ul>
+                <li><a href=""><i class='bx bx-chevron-right' ></i>privacy policy</a></li>
+                <li><a href=""><i class='bx bx-chevron-right' ></i>terms & condition</a></li>
+                <li><a href=""><i class='bx bx-chevron-right' ></i>disclame</a></li>
+            </ul>
+        </div>
+        <div class="single-footer">
+            <h4>Contáctanos</h4>
+            <ul>
+                <li><a href=""><i class='bx bx-map' ></i>Orompello #0120, Los Ángeles, Chile</a></li>
+                <li><a href=""><i class='bx bx-mobile' ></i>+56 9 8244 0812</a></li>
+                <li><a href=""><i class='bx bx-envelope' ></i>vita@gmail.com</a></li>
+                <li><a href=""><i class='bx bx-globe' ></i>www.vita.com</a></li>
+            </ul>
         </div>
     </div>
+    <div class="copy"
+    <p>&copy; 2024 todos los derechos reservados</p>
+</div>
 </footer>
+
+
+  <!-- Botón flotante para abrir el menú de accesibilidad -->
+  <div class="accessibility-button" onclick="toggleAccessibilityMenu()">
+    <i class='bx bx-universal-access' style='color:#ffffff'  ></i>
+  </div>
+
+  <!-- Menú de accesibilidad -->
+  <div class="accessibility-menu" id="accessibility-menu">
+    <div class="close-button" onclick="toggleAccessibilityMenu()"><i class='bx bx-x'></i></div>
+    <div class="menu-options">
+      <div class="option">
+        <button onclick="adjustTextSize('increase')">A+</button>
+        <p>Agrandar</p>
+      </div>
+      <div class="option">
+        <button onclick="adjustTextSize('decrease')">A-</button>
+        <p>Disminuir</p>
+      </div>
+      <div class="option">
+        <button onclick="toggleContrast()"><i class='bx bxs-paint'></i></button>
+        <p>Contraste</p>
+      </div>
+      <div class="option">
+        <button onclick="highlightInteractiveElements()"><i class='bx bx-highlight' ></i></button>
+        <p>Resaltar</p>
+      </div>      
+      <div class="option">
+        <button onclick="activateReading()"><i class='bx bx-volume-full'></i></button>
+        <p>Audio Lectura</p>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+
 
 <!-- Cerrar correctamente la etiqueta 'body' -->
 </body>

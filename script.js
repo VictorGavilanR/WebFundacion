@@ -162,26 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSlider();
 
 
-// Función para abrir el modal
-function openModal(imageSrc, title, info) {
-    const modal = document.getElementById('myModal');
-    modal.style.display = 'flex'; // Mostrar modal
-    document.getElementById('modalImage').src = imageSrc; // Cambiar imagen
-    document.getElementById('modalTitle').innerText = title; // Cambiar título
-    document.getElementById('modalInfo').innerText = info; // Cambiar información
 
-    // Cerrar modal al hacer clic fuera del contenido
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-}
-
-// Función para cerrar el modal
-function closeModal() {
-    document.getElementById('myModal').style.display = 'none'; // Ocultar modal
-}
 
 // Modo Accesible
 
@@ -219,14 +200,10 @@ function adjustTextSize(action) {
   
   // Resaltar elementos interactivos
   function highlightInteractiveElements() {
-    const interactiveElements = document.querySelectorAll('a, button'); // Selecciona los enlaces y botones
+    const interactiveElements = document.querySelectorAll('a, button, img, '); // Selecciona los enlaces y botones
     interactiveElements.forEach(el => el.classList.toggle('interactive')); // Alterna la clase "interactive"
 }
   
-  // Cursor
-  function toggleCursor() {
-    document.body.classList.toggle('custom-cursor');
-}
 
 // Leer texto en voz alta o detener la lectura
 let readingActive = false; // Variable para verificar si la lectura está activa
@@ -293,3 +270,46 @@ window.addEventListener("scroll", () => {
     document.querySelector('.navbar a[href="index.html"]').classList.add("active");
   }
 });
+
+/*MODAL NOSOTROS.PHP*/ 
+
+   // Función para abrir el modal y establecer el contenido
+   function openModal(imagePath, name, profession) {
+    document.getElementById("modalImage").src = imagePath;
+    document.getElementById("modalImage").alt = name;
+    document.getElementById("modalName").textContent = name;
+    document.getElementById("modalProfession").textContent = profession;
+    var modal = document.getElementById("teamModal");
+    modal.style.display = "block";
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el modal
+    var modal = document.getElementById("teamModal");
+
+    // Obtener el botón que cierra el modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Asignar eventos onclick a los miembros del equipo
+    var teamMembers = document.getElementsByClassName('team-member');
+    for (var i = 0; i < teamMembers.length; i++) {
+        teamMembers[i].addEventListener('click', function() {
+            var imagePath = this.getAttribute('data-image');
+            var name = this.getAttribute('data-name');
+            var profession = this.getAttribute('data-profession');
+            openModal(imagePath, name, profession);
+        });
+    }
+
+    // Cuando el usuario haga clic en <span> (x), cerrar el modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Cuando el usuario haga clic en cualquier lugar fuera del modal, cerrar el modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});  
