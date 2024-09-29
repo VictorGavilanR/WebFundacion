@@ -165,68 +165,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Modo Accesible
+// Modo Accesible
 
 // Función para abrir y cerrar el menú de accesibilidad
 function toggleAccessibilityMenu() {
-    const menu = document.getElementById('accessibility-menu');
-    menu.classList.toggle('open');
-  }
-  
-  // Ajustar tamaño de texto
-// Ajustar tamaño de texto en todos los elementos de texto
-// Ajustar tamaño de texto en todos los elementos de texto con límites
-function adjustTextSize(action) {
-    const minSize = 15; // Tamaño mínimo en píxeles
-    const maxSize = 25; // Tamaño máximo en píxeles
-  
-    const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, li, a'); // Añade los elementos que quieras afectar
-    textElements.forEach(element => {
-      let currentSize = parseFloat(window.getComputedStyle(element).fontSize);
-  
-      if (action === 'increase' && currentSize < maxSize) {
-        element.style.fontSize = (currentSize + 2) + 'px';
-      } else if (action === 'decrease' && currentSize > minSize) {
-        element.style.fontSize = (currentSize - 2) + 'px';
-      }
-    });
-  }
-  
-  
-  
-  // Alternar contraste alto
-  function toggleContrast() {
-    document.body.classList.toggle('high-contrast');
-  }
-  
-  // Resaltar elementos interactivos
-  function highlightInteractiveElements() {
-    const interactiveElements = document.querySelectorAll('a, button, img, '); // Selecciona los enlaces y botones
-    interactiveElements.forEach(el => el.classList.toggle('interactive')); // Alterna la clase "interactive"
+  const menu = document.getElementById('accessibility-menu');
+  menu.classList.toggle('open');
 }
-  
+
+// Ajustar tamaño de texto con límites
+function adjustTextSize(action) {
+  const minSize = 15; // Tamaño mínimo en píxeles
+  const maxSize = 25; // Tamaño máximo en píxeles
+
+  const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, li, a'); 
+  textElements.forEach(element => {
+    let currentSize = parseFloat(window.getComputedStyle(element).fontSize);
+
+    if (action === 'increase' && currentSize < maxSize) {
+      element.style.fontSize = (currentSize + 2) + 'px';
+    } else if (action === 'decrease' && currentSize > minSize) {
+      element.style.fontSize = (currentSize - 2) + 'px';
+    }
+  });
+}
+
+// Alternar contraste alto
+// Alternar contraste alto
+function toggleContrast() {
+  document.body.classList.toggle("high-contrast");
+
+}
+
+// Resaltar elementos interactivos
+function highlightInteractiveElements() {
+  const interactiveElements = document.querySelectorAll('a, button, img'); // Corrección en el selector
+  interactiveElements.forEach(el => el.classList.toggle('interactive'));
+}
 
 // Leer texto en voz alta o detener la lectura
-let readingActive = false; // Variable para verificar si la lectura está activa
-let utterance; // Variable para almacenar el SpeechSynthesisUtterance
+let readingActive = false;
+let utterance;
 
 function activateReading() {
   if (readingActive) {
-    // Si la lectura está activa, detenerla
     speechSynthesis.cancel();
-    readingActive = false; // Cambiar el estado
+    readingActive = false;
   } else {
-    // Si la lectura no está activa, iniciarla
     const content = document.querySelector('body').textContent;
     utterance = new SpeechSynthesisUtterance(content);
     speechSynthesis.speak(utterance);
-    readingActive = true; // Cambiar el estado
+    readingActive = true;
   }
 
-  // Reiniciar la variable cuando la lectura termine o se detenga manualmente
   utterance.onend = function() {
     readingActive = false;
   };
 }
+
 
 
 /*Active navbar*/ 

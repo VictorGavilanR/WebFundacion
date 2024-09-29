@@ -269,37 +269,38 @@ if (mysqli_num_rows($resultEquipo) > 0) {
 </footer>
 
 
-  <!-- Botón flotante para abrir el menú de accesibilidad -->
-  <div class="accessibility-button" onclick="toggleAccessibilityMenu()">
-    <i class='bx bx-universal-access' style='color:#ffffff'  ></i>
-  </div>
+<!-- Botón flotante para abrir el menú de accesibilidad -->
+<div class="accessibility-button" onclick="toggleAccessibilityMenu()">
+  <i class='bx bx-universal-access' style='color:#ffffff'></i>
+</div>
 
-  <!-- Menú de accesibilidad -->
-  <div class="accessibility-menu" id="accessibility-menu">
-    <div class="close-button" onclick="toggleAccessibilityMenu()"><i class='bx bx-x'></i></div>
-    <div class="menu-options">
-      <div class="option">
-        <button onclick="adjustTextSize('increase')">A+</button>
-        <p>Agrandar</p>
-      </div>
-      <div class="option">
-        <button onclick="adjustTextSize('decrease')">A-</button>
-        <p>Disminuir</p>
-      </div>
-      <div class="option">
-        <button onclick="toggleContrast()"><i class='bx bxs-paint'></i></button>
-        <p>Contraste</p>
-      </div>
-      <div class="option">
-        <button onclick="highlightInteractiveElements()"><i class='bx bx-highlight' ></i></button>
-        <p>Resaltar</p>
-      </div>      
-      <div class="option">
-        <button onclick="activateReading()"><i class='bx bx-volume-full'></i></button>
-        <p>Audio Lectura</p>
-      </div>
+<!-- Menú de accesibilidad -->
+<div class="accessibility-menu" id="accessibility-menu">
+  <div class="close-button" onclick="toggleAccessibilityMenu()"><i class='bx bx-x'></i></div>
+  <div class="menu-options">
+    <div class="option">
+      <button onclick="adjustTextSize('increase')">A+</button>
+      <p>Agrandar</p>
+    </div>
+    <div class="option">
+      <button onclick="adjustTextSize('decrease')">A-</button>
+      <p>Disminuir</p>
+    </div>
+    <div class="option">
+      <button onclick="toggleContrast()"><i class='bx bxs-paint'></i></button>
+      <p>Contraste</p>
+    </div>
+    <div class="option">
+      <button onclick="highlightInteractiveElements()"><i class='bx bx-highlight'></i></button>
+      <p>Resaltar</p>
+    </div>
+    <div class="option">
+      <button onclick="activateReading()"><i class='bx bx-volume-full'></i></button>
+      <p>Audio Lectura</p>
     </div>
   </div>
+</div>
+
 <script src="script.js"></script>
 
 
