@@ -270,42 +270,17 @@ window.addEventListener("scroll", () => {
 /*MODAL NOSOTROS.PHP*/ 
 
    // Función para abrir el modal y establecer el contenido
-   function openModal(imagePath, name, profession) {
-    document.getElementById("modalImage").src = imagePath;
-    document.getElementById("modalImage").alt = name;
-    document.getElementById("modalName").textContent = name;
-    document.getElementById("modalProfession").textContent = profession;
-    var modal = document.getElementById("teamModal");
-    modal.style.display = "block";
+   function openModal(imagePath, name, profession, services, n_identificacion) {
+    document.getElementById('modalImage').src = imagePath;
+    document.getElementById('modalName').innerText = name;
+    document.getElementById('modalProfession').innerText = "Profesión: " + profession;
+    document.getElementById('modalServices').innerText = "Servicios: " + services;
+    document.getElementById('modalId').innerText = "Número de Identificación: " + n_identificacion;
+    document.getElementById('myModal').style.display = "block";
+    document.body.classList.add('modal-open'); // Deshabilitar el desplazamiento
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtener el modal
-    var modal = document.getElementById("teamModal");
 
-    // Obtener el botón que cierra el modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // Asignar eventos onclick a los miembros del equipo
-    var teamMembers = document.getElementsByClassName('team-member');
-    for (var i = 0; i < teamMembers.length; i++) {
-        teamMembers[i].addEventListener('click', function() {
-            var imagePath = this.getAttribute('data-image');
-            var name = this.getAttribute('data-name');
-            var profession = this.getAttribute('data-profession');
-            openModal(imagePath, name, profession);
-        });
-    }
-
-    // Cuando el usuario haga clic en <span> (x), cerrar el modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // Cuando el usuario haga clic en cualquier lugar fuera del modal, cerrar el modal
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-});  
+function closeModal (){
+  document.getElementById
+}
