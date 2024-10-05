@@ -72,13 +72,12 @@ if (mysqli_num_rows($resultEquipo) > 0) {
             <a href="index.html#nosotros" style="--i:4;">Nosotros</a>
             <a href="index.html#galeria" style="--i:2;">Galería</a>
             <a href="index.html#contacto" style="--i:3;">Contacto</a>
-            <a href="#" style="--i:5;">Donar</a>
+            <a href="donar.html" style="--i:5;">Donar</a>
         </nav>
 
         <div class="social-media">
             <a href="https://www.instagram.com/fundacionvitalosangeles/" target="_blank" style="--i:1;"><i class='bx bxl-instagram'></i></a>
             <a href="#" target="_blank" style="--i:2;"><i class='bx bxl-whatsapp'></i></a>
-            <a href="#" target="_blank" style="--i:3;"><i class='bx bx-cart'></i></a>
         </div>
 
         <div class="hamburger">
@@ -236,20 +235,12 @@ if (mysqli_num_rows($resultEquipo) > 0) {
             </ul>
         </div>
         <div class="single-footer">
-            <h4>quick links</h4>
-            <ul>
-                <li><a href=""><i class='bx bx-chevron-right' ></i>privacy policy</a></li>
-                <li><a href=""><i class='bx bx-chevron-right' ></i>terms & condition</a></li>
-                <li><a href=""><i class='bx bx-chevron-right' ></i>disclame</a></li>
-            </ul>
-        </div>
-        <div class="single-footer">
             <h4>Contáctanos</h4>
             <ul>
-                <li><a href=""><i class='bx bx-map' ></i>Orompello #0120, Los Ángeles, Chile</a></li>
-                <li><a href=""><i class='bx bx-mobile' ></i>+56 9 8244 0812</a></li>
-                <li><a href=""><i class='bx bx-envelope' ></i>vita@gmail.com</a></li>
-                <li><a href=""><i class='bx bx-globe' ></i>www.vita.com</a></li>
+                <li><a   target="_blank" href="https://www.google.com/maps/place/Caupolicán+104,+2º+piso,+Los+Angeles,+Los+Ángeles,+Bío+Bío/data=!4m2!3m1!1s0x966bdd4ec1a6dabb:0x75545f0ec7ceb550?sa=X&ved=1t:242&ictx=111"> <i class='bx bx-map'  ></i>Caupolican #104 2º piso, Los Ángeles, Chile</a></li>
+                <li><a href="index.html"><i target="_blank" class='bx bx-mobile' ></i>+56 9 8244 0812</a></li>
+                <li><a href="mailto:vita@gmail.com" target="_blank"><i class='bx bx-envelope'></i> vita@gmail.com</a></li>
+                <li><a href="#menu"><i class='bx bx-globe' ></i> www.vita.com</a></li>
             </ul>
         </div>
     </div>
