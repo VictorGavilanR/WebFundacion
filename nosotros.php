@@ -155,29 +155,36 @@ if (mysqli_num_rows($resultEquipo) > 0) {
 
 <!-- Sección Directiva/Fundadora -->
 <div class="decoration"></div>
-<div class="container">
-    <h3 id="tercera-seccion"><span class="morado">Fundadora</span></h3>
-    <div class="team-grid">
-        <?php
-        // Mostrar los usuarios con rol 'Directiva'
-        while ($row = mysqli_fetch_assoc($resultDirectiva)) {
-            // Crear la ruta a partir de la base de datos
-            $imagePath = 'admin/' . $row['imagen'];
-
-            // Mostrar el contenedor del miembro del equipo
-            echo "<div class='team-member' onclick=\"openModal('" . $imagePath . "', '" . $row['nombre'] . "', '" . $row['profesion'] . "')\">";
-
-            // Mostrar la imagen con la ruta correcta
-            echo "<img src='" . $imagePath . "' alt='" . $row['nombre'] . "'>";
-
-            // Mostrar el nombre y la profesión del usuario
-            echo "<h3>" . $row['nombre'] . "</h3>";
-            echo "<p>" . $row['profesion'] . "</p>";
-            echo "</div>";
-        }
-        ?>
+    <div class="container">
+        <h3 id="tercera-seccion"><span class="morado">Directiva</span></h3>
+        <div class="team-grid">
+            <?php
+            while ($row = mysqli_fetch_assoc($resultDirectiva)) {
+                $imagePath = 'admin/' . $row['imagen'];
+                echo "<div class='team-member' onclick=\"openModal('" . $imagePath . "', '" . $row['nombre'] . "', '" . $row['profesion'] . "', '" . $row['servicios'] . "', '" . $row['n_identificacion'] . "')\">";
+                echo "<img src='" . $imagePath . "' alt='" . $row['nombre'] . "'>";
+                echo "<h3>" . $row['nombre'] . "</h3>";
+                echo "<p>" . $row['profesion'] . "</p>";
+                echo "</div>";
+            }
+            ?>
+        </div>
     </div>
-</div>
+
+    <!-- Contenedor del modal -->
+    <div id="myModal" class="modal">
+        <!-- Contenido del modal -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Imagen del miembro del equipo">
+            <div class="info">
+                <h3 id="modalName"></h3>
+                <p id="modalProfession"></p>
+                <p id="modalServices"></p>
+                <p id="modalId"></p>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -190,31 +197,14 @@ if (mysqli_num_rows($resultEquipo) > 0) {
             <?php
             // Mostrar los usuarios con rol 'Directiva'
             while ($row = mysqli_fetch_assoc($resultEquipo)) {
-                // Crear la ruta a partir de la base de datos
                 $imagePath = 'admin/' . $row['imagen'];
-
-                // Mostrar el contenedor del miembro del equipo
-                echo "<div class='team-member' data-image='" . $imagePath . "' data-name='" . $row['nombre'] . "' data-profession='" . $row['profesion'] . "'>";
-
-                // Mostrar la imagen con la ruta correcta
+                echo "<div class='team-member' onclick=\"openModal('" . $imagePath . "', '" . $row['nombre'] . "', '" . $row['profesion'] . "', '" . $row['servicios'] . "', '" . $row['n_identificacion'] . "')\">";
                 echo "<img src='" . $imagePath . "' alt='" . $row['nombre'] . "'>";
-
-                // Mostrar el nombre y la profesión del usuario
                 echo "<h3>" . $row['nombre'] . "</h3>";
                 echo "<p>" . $row['profesion'] . "</p>";
                 echo "</div>";
             }
             ?>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div id="teamModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img id="modalImage" src="" alt="">
-            <h3 id="modalName"></h3>
-            <p id="modalProfession"></p>
         </div>
     </div>
 
