@@ -23,10 +23,32 @@ h2 {
     border-radius: 8px;
     padding: 20px;
     margin: 20px 0;
-    width: 500px;
+    width: 90%;
+    max-width: 500px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Botón de Volver */
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Etiquetas y campos del formulario */
 .team-form label {
     display: block;
     margin-bottom: 5px;
@@ -44,14 +66,23 @@ h2 {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
-}
- textarea {
-    height: 300px;
+    transition: border-color 0.3s ease;
 }
 
+/* Estilo para campos de formulario en foco */
+.team-form input[type="text"]:focus,
+.team-form input[type="file"]:focus,
+.team-form select:focus,
+.team-form textarea:focus {
+    border-color: #007BFF;
+    border: 2px solid #007BFF;
+    outline: none;
+}
+
+/* Botón de envío */
 .team-form input[type="submit"] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #007BFF;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -62,7 +93,7 @@ h2 {
 }
 
 .team-form input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #0051ff;
 }
 
 /* Estilos para la tabla de usuarios */
@@ -73,7 +104,9 @@ h2 {
     padding: 20px;
     margin: 20px 0;
     width: 95%;
+    max-width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
 }
 
 .users-table table {
@@ -86,6 +119,26 @@ h2 {
     text-align: left;
     padding: 12px;
     border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+/* Fijar el ancho de la columna que contiene las acciones */
+.users-table td.actions {
+    width: 150px;
+    white-space: nowrap;
+}
+
+/* Controlar el texto en columnas largas */
+.users-table td {
+    word-break: break-word;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.users-table td .truncate {
+    display: block;
+    max-height: 100px;
+    overflow-y: auto;
 }
 
 .users-table th {
@@ -103,7 +156,6 @@ h2 {
     max-width: 50px;
 }
 
-/* Estilos para los enlaces de acción */
 .users-table--edit, 
 .users-table--delete {
     text-decoration: none;
@@ -131,4 +183,37 @@ h2 {
 
 .users-table--delete:hover {
     background-color: #e53935;
+}
+
+.users-table td.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .team-form {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+    }
+    
+    .btn-back {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .users-table {
+        display: none; /* Ocultar la tabla de usuarios en pantallas pequeñas */
+    }
+
+    .users-table td.actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .users-table--edit, .users-table--delete {
+        margin-bottom: 5px;
+    }
 }

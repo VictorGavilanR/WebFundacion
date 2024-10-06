@@ -818,6 +818,10 @@ body {
     width: 400px;
 }
 
+.footer-menu ul li a {
+    text-transform: uppercase !important; /* Asegura que tenga prioridad sobre otros estilos */
+}
+
 .single-footer h4{
     text-transform: capitalize;
     font-size: 22px;
@@ -842,12 +846,13 @@ body {
 }
 
 
-.single-footer ul li a{
+/* Eliminar la propiedad text-transform: uppercase de los enlaces generales */
+.single-footer ul li a {
     color: #070707;
-    text-transform: capitalize;
-    text-transform: lowercase;
-
+    text-transform: none; /* Remueve cualquier transformación de texto */
 }
+
+
 
 .single-footer ul li a i{
     position: absolute;
@@ -859,18 +864,18 @@ body {
 
 .footer-social{
     margin-top: 20px;
-
 }
+
+
 .footer-social a{
     color: #333;
-    border: 1px solid #333;
     width: 40px;
     height: 40px;
     display: inline-block;
     text-align: center;
     line-height: 40px ;
-    border-radius: 50%;
     margin-right: 10px;
+    font-size: 20px;
 }
 
 .footer-social,  a:hover{
@@ -1188,7 +1193,7 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: rgba(46, 204, 113, 0.1);
+    background-color: rgba(255, 255, 255, );
     animation: float 3s ease-in-out infinite;
 }
 

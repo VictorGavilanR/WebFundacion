@@ -235,19 +235,19 @@ if (mysqli_num_rows($resultEquipo) > 0) {
     <!--Footer-->
     <footer class="footer-area">
 
-<div class="main">
-    <div class="footer">
-        <div class="single-footer">
-            
-            <h4>Fundación Vita</h4>
-            <p>"Promoviendo la inclusión y el bienestar de todos"</p>
-            <div class="footer-social">
-                <a href=""><i class='bx bxl-facebook'></i></a>
-                <a href=""><i class='bx bxl-instagram' ></i></a>
-                <a href=""><i class='bx bxl-tiktok' ></i></a>
-
+    <div class="main">
+        <div class="footer">
+            <div class="single-footer">
+                
+                <h4>Fundación Vita</h4>
+                <p>"Promoviendo la inclusión y el bienestar de todos"</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/fundacionvitalosangeles/"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://wa.me/+56982440812" target="_blank" style="--i:2;"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="https://www.tiktok.com/@Fundacion.vita" target="_blank" style="--i:3;"><i class='bx bxl-tiktok' ></i></a>
+    
+                </div>
             </div>
-        </div>
         <div class="single-footer">
             <h4>Menú</h4>
             <ul>
@@ -267,7 +267,7 @@ if (mysqli_num_rows($resultEquipo) > 0) {
             </ul>
         </div>
     </div>
-    <div class="copy"
+    <div class="copy">
     <p>&copy; 2024 todos los derechos reservados</p>
 </div>
 </footer>

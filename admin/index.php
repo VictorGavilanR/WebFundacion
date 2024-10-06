@@ -25,6 +25,9 @@ if (!$query) {
     <link href="admin.css" rel="stylesheet">
 </head>
 <body>
+
+<a href="index.html" class="btn-back">Volver a la Web</a>
+
     <!-- Sección de formulario de equipo -->
     <div class="team-form">
         <h2>Crear Usuario</h2>
