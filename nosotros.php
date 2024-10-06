@@ -77,7 +77,8 @@ if (mysqli_num_rows($resultEquipo) > 0) {
 
         <div class="social-media">
             <a href="https://www.instagram.com/fundacionvitalosangeles/" target="_blank" style="--i:1;"><i class='bx bxl-instagram'></i></a>
-            <a href="#" target="_blank" style="--i:2;"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://wa.me/+56982440812" target="_blank" style="--i:2;"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://www.tiktok.com/@Fundacion.vita" target="_blank" style="--i:3;"><i class='bx bxl-tiktok' ></i></a>
         </div>
 
         <div class="hamburger">
@@ -154,38 +155,48 @@ if (mysqli_num_rows($resultEquipo) > 0) {
 
 <!-- Sección Directiva/Fundadora -->
 <div class="decoration"></div>
-    <div class="container">
-        <h3 id="tercera-seccion"><span class="morado">Directiva</span></h3>
-        <div class="team-grid">
-            <?php
-            while ($row = mysqli_fetch_assoc($resultDirectiva)) {
-                $imagePath = 'admin/' . $row['imagen'];
-                echo "<div class='team-member' onclick=\"openModal('" . $imagePath . "', '" . $row['nombre'] . "', '" . $row['profesion'] . "', '" . $row['servicios'] . "', '" . $row['n_identificacion'] . "')\">";
-                echo "<img src='" . $imagePath . "' alt='" . $row['nombre'] . "'>";
-                echo "<h3>" . $row['nombre'] . "</h3>";
-                echo "<p>" . $row['profesion'] . "</p>";
-                echo "</div>";
-            }
-            ?>
-        </div>
-    </div>
+<div class="container">
+    <h3 id="tercera-seccion"><span class="morado">Directiva</span></h3>
+    <div class="team-grid">
+        <?php
+        while ($row = mysqli_fetch_assoc($resultDirectiva)) {
+            // Escapar y formatear los datos para evitar problemas en el modal
+            $nombre = addslashes($row['nombre']); // Escapar comillas simples
+            $profesion = addslashes($row['profesion']); // Escapar comillas simples
+            $servicios = addslashes($row['servicios']); // Escapar comillas simples
+            $n_identificacion = addslashes($row['n_identificacion']); // Escapar comillas simples
 
-    <!-- Contenedor del modal -->
+            // Reemplazar saltos de línea con espacios para evitar problemas en el onclick
+            $servicios = preg_replace('/\r|\n/', ' ', $servicios);
+
+            // Definir la ruta de la imagen escapada
+            $imagePath = 'admin/' . htmlspecialchars($row['imagen'], ENT_QUOTES, 'UTF-8');
+
+            // Generar HTML con datos escapados y formateados
+            echo "<div class='team-member' onclick=\"openModal('$imagePath', '$nombre', '$profesion', '$servicios', )\">";
+            echo "<img src='$imagePath' alt='" . htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') . "'>";
+            echo "<h3>" . htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') . "</h3>";
+            echo "<p>" . htmlspecialchars($profesion, ENT_QUOTES, 'UTF-8') . "</p>";
+            echo "</div>"; // Cerrar el div 'team-member'
+        }
+        ?>
+    </div>
+</div>
+
+
     <div id="myModal" class="modal">
-        <!-- Contenido del modal -->
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="Imagen del miembro del equipo">
-            <div class="info">
-                <h3 id="modalName"></h3>
-                <p id="modalProfession"></p>
-                <p id="modalServices"></p>
-                <p id="modalId"></p>
-            </div>
+    <div class="modal-content">
+        <i class='bx bx-x close-icon' onclick="closeModal()"></i>
+        <img id="modalImage" src="" alt="Imagen del miembro del equipo">
+        <div class="info">
+            <h3 id="modalName"></h3>
+            <br>
+            <p id="modalProfession"></p>
+            <br>
+            <p id="modalServices"></p>
         </div>
     </div>
-
-
+</div>
 
 
 
@@ -196,17 +207,29 @@ if (mysqli_num_rows($resultEquipo) > 0) {
             <?php
             // Mostrar los usuarios con rol 'Directiva'
             while ($row = mysqli_fetch_assoc($resultEquipo)) {
-                $imagePath = 'admin/' . $row['imagen'];
-                echo "<div class='team-member' onclick=\"openModal('" . $imagePath . "', '" . $row['nombre'] . "', '" . $row['profesion'] . "', '" . $row['servicios'] . "', '" . $row['n_identificacion'] . "')\">";
-                echo "<img src='" . $imagePath . "' alt='" . $row['nombre'] . "'>";
-                echo "<h3>" . $row['nombre'] . "</h3>";
-                echo "<p>" . $row['profesion'] . "</p>";
-                echo "</div>";
-            }
-            ?>
+              // Escapar y formatear los datos para evitar problemas en el modal
+            $nombre = addslashes($row['nombre']); // Escapar comillas simples
+            $profesion = addslashes($row['profesion']); // Escapar comillas simples
+            $servicios = addslashes($row['servicios']); // Escapar comillas simples
+            $n_identificacion = addslashes($row['n_identificacion']); // Escapar comillas simples
+
+            // Reemplazar saltos de línea con espacios para evitar problemas en el onclick
+            $servicios = preg_replace('/\r|\n/', ' ', $servicios);
+
+            // Definir la ruta de la imagen escapada
+            $imagePath = 'admin/' . htmlspecialchars($row['imagen'], ENT_QUOTES, 'UTF-8');
+
+            // Generar HTML con datos escapados y formateados
+            echo "<div class='team-member' onclick=\"openModal('$imagePath', '$nombre', '$profesion', '$servicios', )\">";
+            echo "<img src='$imagePath' alt='" . htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') . "'>";
+            echo "<h3>" . htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') . "</h3>";
+            echo "<p>" . htmlspecialchars($profesion, ENT_QUOTES, 'UTF-8') . "</p>";
+            echo "</div>"; // Cerrar el div 'team-member'
+        }
+        ?>
         </div>
     </div>
-
+    
 
 
     <!--Footer-->

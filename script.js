@@ -269,18 +269,33 @@ window.addEventListener("scroll", () => {
 
 /*MODAL NOSOTROS.PHP*/ 
 
-   // Función para abrir el modal y establecer el contenido
-   function openModal(imagePath, name, profession, services, n_identificacion) {
-    document.getElementById('modalImage').src = imagePath;
-    document.getElementById('modalName').innerText = name;
-    document.getElementById('modalProfession').innerText = "Profesión: " + profession;
-    document.getElementById('modalServices').innerText = "Servicios: " + services;
-    document.getElementById('modalId').innerText = "Número de Identificación: " + n_identificacion;
-    document.getElementById('myModal').style.display = "block";
-    document.body.classList.add('modal-open'); // Deshabilitar el desplazamiento
+function openModal(imagePath, name, profession, services, ) {
+  document.getElementById('modalImage').src = imagePath;
+  document.getElementById('modalName').innerText = name;
+  document.getElementById('modalProfession').innerText = "Profesión: " + profession;
+  document.getElementById('modalServices').innerText = "Servicios: " + services;
+  document.getElementById('myModal').style.display = "block";
+  document.body.classList.add('modal-open');
 }
 
-
-function closeModal (){
-  document.getElementById
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+  document.body.classList.remove('modal-open');
 }
+
+document.getElementById('myModal').addEventListener('click', function(event) {
+  // Detectar si se hizo clic en el fondo del modal
+  if (event.target === this) {
+      closeModal();
+  }
+});
+
+// Evento para el icono de cierre
+document.querySelector('.close-icon').addEventListener('click', closeModal);
+
+
+document.addEventListener('click', function(event) {
+  console.log('Estás clickeando en:', event.target);
+});
+
+console.log(services);

@@ -43,7 +43,7 @@ if (!$user) {
             <input type="text" id="nombre" name="nombre" value="<?= $user['nombre'] ?>" required>
 
             <label for="n_identificacion">N° Identificación:</label>
-            <input type="text" id="n_identificacion" name="n_identificacion" value="<?= $user['n_identificacion'] ?>" required>
+            <input type="text" id="n_identificacion" name="n_identificacion" value="<?= $user['n_identificacion'] ?>" >
 
             <label for="profesion">Profesión:</label>
             <input type="text" id="profesion" name="profesion" value="<?= $user['profesion'] ?>" required>
