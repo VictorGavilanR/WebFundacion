@@ -7,10 +7,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validar los datos
     if (!empty($name) && !empty($email) && !empty($message)) {
-        $to = "luismatiasmg07@gmail.com";  // Cambia a tu correo
+        // Correo de destino (tu correo)
+        $to = "luismatiasmg07@gmail.com";  // Cambia a tu correo real aquí
         $subject = "Nuevo mensaje de contacto";
-        $headers = "From: " . $email . "\r\n";
-        $headers .= "Reply-To: " . $email . "\r\n";
+
+        // Encabezados del correo
+        $headers = "From: $name <$email>\r\n";  
+        $headers .= "Reply-To: $email\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
         // Cuerpo del correo
