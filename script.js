@@ -13,6 +13,23 @@
         }
     };
 
+    // Obtener el nombre del archivo de la URL actual
+const currentPage = window.location.pathname.split('/').pop();
+
+// Asociar cada enlace con el nombre de archivo correspondiente
+const pageLinks = {
+
+    "donar.html": document.getElementById("donar-link"),
+    "voluntariado.html": document.getElementById("voluntariado-link")
+};
+
+// Agregar la clase "active" al enlace correspondiente
+if (pageLinks[currentPage]) {
+    pageLinks[currentPage].classList.add("active");
+}
+
+
+
 
 /*menu hamburguesa*/ 
 document.querySelector('.hamburger').addEventListener('click', function() {
