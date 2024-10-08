@@ -795,6 +795,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover; /* Asegura que ocupe todo el footer */
     background-position: center; /* Centra la imagen en el footer */
+    height: 350px;
 }
 
 
@@ -843,6 +844,9 @@ body {
 }
 .single-footer a:hover{
    color:#8983f7;
+}
+.single-footer p{
+    color: #000;
 }
 
 
@@ -1658,4 +1662,77 @@ body {
     .donate-box {
         padding: 1rem;
     }
+}
+
+
+/* voluntariado */
+.voluntariado-titulo {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin-top: 200px;
+}
+
+.voluntariado-titulo h2 {
+    color: #333;
+    text-align: center;
+    font-size: 40px;
+}
+
+.voluntariado-titulo p {
+    color: #666;
+    text-align: center;
+    max-width: 800px;
+    margin: 30px auto;
+    font-size: 25px;
+}
+
+.imagen-voluntariado{
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #333;
+}
+
+.imagen-voluntariado img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.voluntariado-info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+.voluntariado-info h3,
+.voluntariado-info p,
+.voluntariado-info h4{
+    color: black;
+}
+
+.voluntariado-info li{
+    list-style: none;
+    line-height: 1.5;
+        color: black;
+
+}
+
+.postulate{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-postulate{
+    padding: 12px 24px;
+    border: 1px solid #4f4f4f;
+    border-radius: 4px;
+    font-size: 19px;
+    cursor: pointer;
+    background: #c6a4cf;
+    color: #fff;    
 }
