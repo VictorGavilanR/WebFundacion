@@ -1701,38 +1701,110 @@ body {
     height: 100%;
 }
 
-.voluntariado-info{
+
+.voluntariado-info {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    width: 80%;
-    margin: 50px auto;
-    text-align: center;
-}
-.voluntariado-info h3,
-.voluntariado-info p,
-.voluntariado-info h4{
-    color: black;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 50px;
+    background-color: #f9f9f9;
 }
 
-.voluntariado-info li{
-    list-style: none;
-    line-height: 1.5;
-        color: black;
 
+.voluntariado-profesional, .voluntariado-artistico {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.postulate{
-    width: 100%;
+
+.voluntariado-profesional:hover, .voluntariado-artistico:hover {
+    transform: scale(1.05);
+}
+
+
+.voluntariado-profesional h3, .voluntariado-artistico h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    color: #333;
 }
-.button-postulate{
-    padding: 12px 24px;
-    border: 1px solid #4f4f4f;
-    border-radius: 4px;
-    font-size: 19px;
-    cursor: pointer;
-    background: #c6a4cf;
-    color: #fff;    
+
+.voluntariado-profesional h3 i, .voluntariado-artistico h3 i {
+    font-size: 32px;
+    color: #c6a4cf;
+    margin-right: 10px;
+}
+
+
+.voluntariado-profesional p, .voluntariado-artistico p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+.voluntariado-profesional ul, .voluntariado-artistico ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.voluntariado-profesional ul li, .voluntariado-artistico ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.voluntariado-profesional ul li:before, .voluntariado-artistico ul li:before {
+    content: "\2022";
+    color: #c6a4cf;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-right: 10px;
+}
+
+/* Botones de postulación */
+.button-postulate {
+    background-color: #c6a4cf;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-postulate:hover {
+    background-color: #f9c5ce;
+    transform: scale(1.1);
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .voluntariado-info {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .voluntariado-profesional, .voluntariado-artistico {
+        padding: 20px;
+    }
+
+    .voluntariado-profesional h3, .voluntariado-artistico h3 {
+        font-size: 24px;
+    }
+
+    .voluntariado-profesional p, .voluntariado-artistico p {
+        font-size: 16px;
+    }
 }
