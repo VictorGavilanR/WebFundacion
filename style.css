@@ -795,7 +795,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover; /* Asegura que ocupe todo el footer */
     background-position: center; /* Centra la imagen en el footer */
-    height: 350px;
 }
 
 
@@ -1687,19 +1686,29 @@ body {
     font-size: 25px;
 }
 
-.imagen-voluntariado{
+.imagen-voluntariado {
     width: 80%;
-    height: 400px;
     margin: 0 auto;
-    background-color: #333;
 }
 
-.imagen-voluntariado img{
+.imagen-voluntariado img {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 100%;
 }
+
+@media (max-width: 768px) {
+    .imagen-voluntariado {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .imagen-voluntariado {
+        width: 100%;
+    }
+}
+
 
 
 .voluntariado-info {
