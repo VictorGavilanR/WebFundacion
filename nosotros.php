@@ -240,11 +240,12 @@ if (mysqli_num_rows($resultEquipo) > 0) {
             <div class="single-footer">
                 
                 <h4>Fundación Vita</h4>
-                <p>"Promoviendo la inclusión y el bienestar de todos"</p>
+                <p>En Fundación Vita promovemos la Inclusión de personas neurodivergentes, fomentando su desarrollo integral mediante oportunidades equitativas. Utilizamos el arte y la cultura como herramientas para mejorar su bienestar y participación.</p>
                 <div class="footer-social">
                     <a href="https://www.instagram.com/fundacionvitalosangeles/"><i class='bx bxl-instagram' ></i></a>
                     <a href="https://wa.me/+56982440812" target="_blank" style="--i:2;"><i class='bx bxl-whatsapp'></i></a>
                     <a href="https://www.tiktok.com/@Fundacion.vita" target="_blank" style="--i:3;"><i class='bx bxl-tiktok' ></i></a>
+                    
     
                 </div>
             </div>
@@ -255,6 +256,8 @@ if (mysqli_num_rows($resultEquipo) > 0) {
                 <li><a href="index.html#nosotros"><i class='bx bx-chevron-right' ></i>Nosotros</a></li>
                 <li><a href="index.html#galeria"><i class='bx bx-chevron-right' ></i>Galería</a></li>
                 <li><a href="index.html#contacto"><i class='bx bx-chevron-right' ></i>Contacto</a></li>
+                <li><a href="donar.html"><i class='bx bx-chevron-right' ></i>Donar</a></li>
+                <li><a href="voluntariado.html"><i class='bx bx-chevron-right' ></i>Voluntariado</a></li>
             </ul>
         </div>
         <div class="single-footer">
