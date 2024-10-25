@@ -43,7 +43,12 @@ if (mysqli_num_rows($resultEquipo) > 0) {
 } else {
     echo "No se encontraron usuarios con rol 'Equipo'<br>";
 }
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 ?>
+
 
 
 
@@ -265,9 +270,9 @@ if (mysqli_num_rows($resultEquipo) > 0) {
             <ul>
                 <li><a   target="_blank" href="https://www.google.com/maps/place/Caupolicán+104,+2º+piso,+Los+Angeles,+Los+Ángeles,+Bío+Bío/data=!4m2!3m1!1s0x966bdd4ec1a6dabb:0x75545f0ec7ceb550?sa=X&ved=1t:242&ictx=111"> <i class='bx bx-map'  ></i>Caupolican #104 2º piso, Los Ángeles, Chile</a></li>
                 <li><a href="index.html"><i target="_blank" class='bx bx-mobile' ></i>+56 9 8244 0812</a></li>
-                <li><a href="mailto:vita@gmail.com" target="_blank"><i class='bx bx-envelope'></i> vita@gmail.com</a></li>
-                <li><a href="#menu"><i class='bx bx-globe' ></i> www.vita.com</a></li>
-            </ul>
+                <li><a href="mailto:vita@gmail.com" target="_blank"><i class='bx bx-envelope'></i> fundacionvitalosangeles@gmail.com
+                <li><a href="#menu"><i class='bx bx-globe' ></i> www.fundacionvita.com</a></li>
+                </ul>
         </div>
     </div>
     <div class="copy">

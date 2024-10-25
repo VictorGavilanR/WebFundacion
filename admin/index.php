@@ -36,7 +36,7 @@ if (!$query) {
             <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre" required>
 
             <label for="n_identificacion">N° Identificación:</label>
-            <input type="text" id="n_identificacion" name="n_identificacion" placeholder="Ingrese número de identificación" >
+            <input type="text" id="n_identificacion" name="n_identificacion" placeholder="NO ES OBLIGATORIO" >
 
             <label for="profesion">Profesión:</label>
             <input type="text" id="profesion" name="profesion" placeholder="Profesión del miembro" required>

@@ -1,13 +1,12 @@
 <?php
 
 function connection(){
-    $host = "localhost";
+    $host = "localhost:3307";
     $user = "root";
     $pass = "";
+    $bd = "fundac43_user_crud_fundacion";
 
-    $bd = "user_crud_fundacion";
-
-    $connect = mysqli_connect($host, $user, $pass);
+    $connect = mysqli_connect($host, $user, $pass, );
 
     mysqli_select_db($connect, $bd);
 
