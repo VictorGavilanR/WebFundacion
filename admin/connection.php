@@ -2,7 +2,7 @@
 
 function connection() {
     $host = "localhost";
-    $user = "vitadbfundacion";
+    $user = "fundac43_vitadbfundacion";
     $pass = "vidafundacion1234";
     $bd = "fundac43_user_crud_fundacion";
 
