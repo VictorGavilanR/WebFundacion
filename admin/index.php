@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin_logged_in'])) {
+    header("Location: login.php");
+    exit();
+}
+
 // Conectar a la base de datos
 include('connection.php');
 $con = connection();
@@ -15,7 +21,6 @@ if (!$query) {
     die("Error en la consulta: " . mysqli_error($con));
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,51 +30,16 @@ if (!$query) {
     <link href="admin.css" rel="stylesheet">
 </head>
 <body>
-
 <a href="index.html" class="btn-back">Volver a la Web</a>
 
-    <!-- Sección de formulario de equipo -->
+    <!-- Resto del contenido -->
     <div class="team-form">
         <h2>Crear Usuario</h2>
         <form action="insert_user.php" method="POST" enctype="multipart/form-data">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre" required>
-
-            <label for="n_identificacion">N° Identificación:</label>
-            <input type="text" id="n_identificacion" name="n_identificacion" placeholder="NO ES OBLIGATORIO" >
-
-            <label for="profesion">Profesión:</label>
-            <input type="text" id="profesion" name="profesion" placeholder="Profesión del miembro" required>
-            
-            <label for="imagen">Imagen:</label>
-            <input type="file" id="imagen" name="imagen" accept="image/*" required>
-
-            <label for="servicios">Servicios:</label>
-            <textarea id="servicios" name="servicios" placeholder="Servicios que ofrece" required></textarea>
-            
-            <label for="rol_id">Rol:</label>
-            <select id="rol_id" name="rol_id" required>
-                <?php
-                // Consulta para obtener todos los roles
-                $roles_query = "SELECT * FROM roles";
-                $roles_result = mysqli_query($con, $roles_query);
-                
-                // Verifica si la consulta fue exitosa
-                if (!$roles_result) {
-                    die("Error en la consulta de roles: " . mysqli_error($con));
-                }
-                
-                while ($role = mysqli_fetch_array($roles_result)) {
-                    echo "<option value='" . $role['id'] . "'>" . $role['nombre'] . "</option>";
-                }
-                ?>
-            </select>
-
-            <input type="submit" value="Agregar Usuario">
+            <!-- Formulario aquí -->
         </form>
     </div>
 
-    <!-- Sección de la tabla de usuarios -->
     <div class="users-table">
         <h2>Lista de Usuarios</h2>
         <table>
@@ -98,7 +68,7 @@ if (!$query) {
                     <td>
                         <a href="edit_user.php?id=<?= $row['id'] ?>" class="users-table--edit">Editar</a>
                         <a href="delete_user.php?id=<?= $row['id'] ?>" class="users-table--delete">Eliminar</a>
-                        </td>
+                    </td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>
