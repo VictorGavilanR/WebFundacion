@@ -1,16 +1,20 @@
 <?php
 
-function connection(){
-    $host = "localhost:3307";
-    $user = "root";
-    $pass = "";
+function connection() {
+    $host = "localhost";
+    $user = "vitadbfundacion";
+    $pass = "vidafundacion1234";
     $bd = "fundac43_user_crud_fundacion";
 
-    $connect = mysqli_connect($host, $user, $pass, );
+    // Crear conexión
+    $connect = mysqli_connect($host, $user, $pass, $bd);
 
-    mysqli_select_db($connect, $bd);
+    // Verificar la conexión
+    if (!$connect) {
+        die("Error de conexión: " . mysqli_connect_error());
+    }
 
     return $connect;
-};
+}
 
 ?>
