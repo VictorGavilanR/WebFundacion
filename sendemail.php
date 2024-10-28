@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar los datos
     if (!empty($name) && !empty($email) && !empty($message)) {
         // Correo de destino (tu correo)
-        $to = "luismatiasmg07@gmail.com";  // Cambia a tu correo real aquí
+        $to = "fundacionvitalosangeles@gmail.com";  // Cambia a tu correo real aquí
         $subject = "Nuevo mensaje de contacto";
 
         // Encabezados del correo
