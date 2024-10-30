@@ -1,24 +1,31 @@
 <?php
 session_start();
-include('connection.php');
-$con = connection();
+include 'connection.php';  // Aseg煤rate de que la conexi贸n est茅 correctamente configurada
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = mysqli_real_escape_string($con, $_POST['username']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    // Consulta para verificar el usuario y contraseña
-    $sql = "SELECT * FROM usuarios WHERE username='$username' AND password='$password' AND rol_id='1'"; // Asegúrate que '1' sea el rol de administrador
-    $result = mysqli_query($con, $sql);
+    $query = "SELECT * FROM admins WHERE username = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if (mysqli_num_rows($result) === 1) {
-        $_SESSION['admin_logged_in'] = true;
-        header("Location: index.php"); // Redirige al área de administración
-        exit();
+    if ($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['admin_logged_in'] = true;
+            header("Location: index.php");  // Redirige al panel principal despu茅s de iniciar sesi贸n
+            exit();
+        } else {
+            $error = "Credenciales incorrectas.";
+        }
     } else {
-        echo "Usuario o contraseña incorrectos.";
+        $error = "Credenciales incorrectas.";
     }
 }
+$conn->close();
 ?>
 
 <!DOCTYPE html>

@@ -2,8 +2,8 @@
 
 function connection() {
     $host = "localhost";
-    $user = "fundac43_vitadbfundacion";
-    $pass = "vidafundacion1234";
+    $user = "root";
+    $pass = "";
     $bd = "fundac43_user_crud_fundacion";
 
     // Crear conexi¨®n
