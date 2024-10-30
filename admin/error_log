@@ -1,0 +1,46 @@
+[28-Oct-2024 18:37:49 America/Santiago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/fundac43/public_html/admin/connection.php on line 10
+[28-Oct-2024 18:37:59 America/Santiago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/fundac43/public_html/admin/connection.php on line 10
+[28-Oct-2024 18:38:00 America/Santiago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/fundac43/public_html/admin/connection.php on line 10
+[28-Oct-2024 18:38:02 America/Santiago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/fundac43/public_html/admin/connection.php on line 10
+[28-Oct-2024 18:38:06 America/Santiago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/fundac43/public_html/admin/connection.php on line 10
+[28-Oct-2024 18:38:06 America/Santiago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/fundac43/public_html/admin/connection.php on line 10
+[28-Oct-2024 19:01:17 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[28-Oct-2024 19:06:31 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[28-Oct-2024 19:07:22 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[28-Oct-2024 19:08:10 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[28-Oct-2024 19:08:48 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[28-Oct-2024 19:09:24 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[28-Oct-2024 19:09:44 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[28-Oct-2024 19:10:02 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[28-Oct-2024 19:10:24 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[28-Oct-2024 19:10:43 America/Santiago] PHP Warning:  Undefined array key "n_identificacion" in /home/fundac43/public_html/admin/insert_user.php on line 11
+[29-Oct-2024 00:17:19 America/Santiago] PHP Warning:  include(auth_check.php): Failed to open stream: No such file or directory in /home/fundac43/public_html/admin/index.php on line 3
+[29-Oct-2024 00:17:19 America/Santiago] PHP Warning:  include(): Failed opening 'auth_check.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/fundac43/public_html/admin/index.php on line 3
+[29-Oct-2024 00:55:49 America/Santiago] PHP Warning:  Undefined variable $con in /home/fundac43/public_html/admin/index.php on line 53
+[29-Oct-2024 00:55:49 America/Santiago] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home/fundac43/public_html/admin/index.php:53
+Stack trace:
+#0 /home/fundac43/public_html/admin/index.php(53): mysqli_query()
+#1 {main}
+  thrown in /home/fundac43/public_html/admin/index.php on line 53
+[29-Oct-2024 01:17:10 America/Santiago] PHP Fatal error:  Uncaught TypeError: mysqli_num_rows(): Argument #1 ($result) must be of type mysqli_result, bool given in /home/fundac43/public_html/admin/login.php:14
+Stack trace:
+#0 /home/fundac43/public_html/admin/login.php(14): mysqli_num_rows()
+#1 {main}
+  thrown in /home/fundac43/public_html/admin/login.php on line 14
+[29-Oct-2024 01:44:08 America/Santiago] PHP Fatal error:  Uncaught TypeError: mysqli_num_rows(): Argument #1 ($result) must be of type mysqli_result, bool given in /home/fundac43/public_html/admin/login.php:14
+Stack trace:
+#0 /home/fundac43/public_html/admin/login.php(14): mysqli_num_rows()
+#1 {main}
+  thrown in /home/fundac43/public_html/admin/login.php on line 14
+[29-Oct-2024 12:23:28 America/Santiago] PHP Warning:  Undefined array key "username" in /home/fundac43/public_html/admin/login.php on line 7
+[29-Oct-2024 12:23:28 America/Santiago] PHP Warning:  Undefined array key "password" in /home/fundac43/public_html/admin/login.php on line 8
+[29-Oct-2024 12:23:28 America/Santiago] PHP Fatal error:  Uncaught TypeError: mysqli_num_rows(): Argument #1 ($result) must be of type mysqli_result, bool given in /home/fundac43/public_html/admin/login.php:14
+Stack trace:
+#0 /home/fundac43/public_html/admin/login.php(14): mysqli_num_rows()
+#1 {main}
+  thrown in /home/fundac43/public_html/admin/login.php on line 14
+[30-Oct-2024 00:58:20 America/Santiago] PHP Fatal error:  Uncaught TypeError: mysqli_num_rows(): Argument #1 ($result) must be of type mysqli_result, bool given in /home/fundac43/public_html/admin/login.php:14
+Stack trace:
+#0 /home/fundac43/public_html/admin/login.php(14): mysqli_num_rows()
+#1 {main}
+  thrown in /home/fundac43/public_html/admin/login.php on line 14

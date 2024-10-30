@@ -1,225 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang=en>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="style.css">
-    <title>Fundación | Vita</title>
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="icon" href="/img/logo.png">
-
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=google-site-verification content=tY4fnHRmjdRYelsDWr45-TSRcOv1AJNejCsFE6sDh-A>
+<link rel=stylesheet href=style.css>
+<title>Fundación | Vita</title>
+<link href=https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css rel=stylesheet>
+<link rel=icon href=/img/logo.png type=image/x-icon>
+<link rel="shortcut icon" href=/img/logo.ico type=image/x-icon>
+<script>document.addEventListener("DOMContentLoaded",(function(){window.location.hash&&history.replaceState(null,null,window.location.pathname)}))</script>
 </head>
 <body>
-
-    <header class="header">
-        <a href="index.html" class="logo">
-            <img src="img/logo.png">
-        </a>
-
-        <nav class="navbar ">
-            <a href="index.html" style="--i:1;">Home</a>
-            <a href="#nosotros" style="--i:2;">Nosotros</a>
-            <a href="#galeria" style="--i:3;">Galería</a>
-            <a href="#contacto" style="--i:4;">Contacto</a>
-            <a href="donar.html" style="--i:5;">Donar</a>
-            <a href="voluntariado.html" style="--i:5;">Voluntariado</a>
-        </nav>
-
-        <div class="social-media">
-            <a href="https://www.instagram.com/fundacionvitalosangeles/" target="_blank" style="--i:1;"><i class='bx bxl-instagram'></i></a>
-            <a href="https://wa.me/+56982440812" target="_blank" style="--i:2;"><i class='bx bxl-whatsapp'></i></a>
-            <a href="https://www.tiktok.com/@Fundacion.vita" target="_blank" style="--i:3;"><i class='bx bxl-tiktok' ></i></a>
-        </div>
-
-        <div class="hamburger">
-            <i class='bx bx-menu'></i>
-        </div>
-        <div class="close hidden">
-            <i class='bx bx-x'></i>
-        </div>
-    </header>
-
-
-
-    <section class="home">
-        <div class="home-content">
-            <h1>Fundación Vita</h1>
-            <h3>"Promoviendo la Inclusión y el Bienestar de todos"</h3>
-            <p>En Fundación Vita promovemos la Inclusión de personas neurodivergentes, fomentando su desarrollo integral mediante oportunidades equitativas. Utilizamos el arte y la cultura como herramientas para mejorar su bienestar y participación. Ofrecemos apoyo terapéutico y espacios formativos que benefician a nuestros usuarios y sus familias, con un enfoque en la Neurodiversidad y los derechos. Nuestro equipo y voluntarios se dedican a proyectos inclusivos que celebran la diversidad humana.
-
-            </p>
-            <a href="nosotros.php"><button  class="button">Saber Más</button></a>
-        </div>
-
-        <div class="home-img">
-            <div class="rhombus">
-                <img src="img/logo.png" class="logo-img" alt="logo">
-            </div>
-        </div>
-
-        <div class="rhombus2"></div>
-    </section>
-
-
-    <!--NOSOTROS-->
-    <section class="nosotros" id="nosotros">
-        <div class="nosotros_content">
-            <img src="img/estantevita.jpg" class="nosotros_img" alt="Nosotros Image">
-            <div class="nosotros_texto">
-                <h2> <span class="morado"> ¿Quiénes Somos?</span><hr class="linea-nosotros"></h2>
-                
-                <p>La <span class="rosado">Fundación Vita</span> nace del profundo compromiso y la experiencia personal de su fundadora, una destacada profesional en el campo de la salud y el bienestar. Impulsada por vivencias personales y familiares que la han sensibilizado frente a las necesidades de quienes enfrentan dificultades funcionales, nuestra fundadora decidió canalizar su vocación de servicio en una institución dedicada a mejorar la calidad de vida de la comunidad. VITA se constituye como un espacio inclusivo y solidario, cuyo principal objetivo es ofrecer atención integral y apoyo a personas con diversidad funcional, facilitando su desarrollo y promoviendo su autonomía. A través de una amplia gama de servicios y programas personalizados, la fundación se compromete a ser un pilar de esperanza y transformación. Esta promueve la inclusión a través de terapias, talleres y capacitaciones asequibles en <span class="rosado">la comuna de Los Ángeles</span>.</p>
-
-
-                <br>
-                <a href="nosotros.php"><button  class="button">Saber Más</button></a>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!---Galeria -->
-    <section class="gallery-container" id="galeria">
-        <div class="featured-image">
-            <img id="featured" src="img/imgrid1.jpg" alt="Imagen destacada">
-        </div>
-    
-        <!-- Contenedor del slider con las imágenes pequeñas -->
-        <div class="image-slider">
-            <button class="prev-btn">&#10094;</button> <!-- Botón de retroceso -->
-            <div class="image-grid-container">
-                <div class="image-grid">
-                    <div class="image-item">
-                        <img src="img/imgrid2.jpg" alt="Imagen 1">
-                    </div>
-                    <div class="image-item">
-                        <img src="img/imgrid3.jpg" alt="Imagen 2">
-                    </div>
-                    <div class="image-item">
-                        <img src="img/imgrid4.jpg" alt="Imagen 3">
-                    </div>
-                    <div class="image-item">
-                        <img src="img/imgrid5.jpg" alt="Imagen 4">
-                    </div>
-                    <div class="image-item">
-                        <img src="img/imgrid6.jpg" alt="Imagen 5">
-                    </div>
-                    <!-- Añade más imágenes aquí si es necesario -->
-                </div>
-            </div>
-            <button class="next-btn">&#10095;</button> <!-- Botón de avance -->
-        </div>
-    </section>
-    
-<!-- Formulario -->
-<section class="contact-section" id="contacto">
-    <div class="contact-wrapper">
-        <div class="contact-container">
-            <h2>Contáctanos</h2>
-            <p class="subtext">Escríbenos cualquier duda que tengas, estamos aquí para ayudarte.</p>
-            <form action="#" method="post">
-                <div class="input-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Ingrese Nombre" required>
-                </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Ingrese un Email" required>
-                </div>
-                <div class="input-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Mensaje"></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Enviar</button>
-            </form>
-        </div>
-        <div class="map-container">
-            <p class="map-text">Puedes encontrarnos aquí también en edificio Costa Brava 2º piso</p>
-            <div class="map-iframe">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.5396199027837!2d-72.35012902414907!3d-37.471590514559956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966bdd4ec1a6dabb%3A0xc6a28617a19a6ae7!2zQ2F1cG9saWPDoW4gMTA0LCBMb3MgQW5nZWxlcywgTG9zIMOBbmdlbGVzLCBCw61vIELDrW8!5e0!3m2!1ses!2scl!4v1728098846475!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </div>
+<header class=header>
+<a href=index.html class=logo>
+<img src=img/logo.png>
+</a>
+<nav class=navbar>
+<a href=index.html style=--i:1>Home</a>
+<a href=#nosotros style=--i:2>Nosotros</a>
+<a href=#galeria style=--i:3>Galería</a>
+<a href=#contacto style=--i:4>Contacto</a>
+<a href=donar.html style=--i:5>Donar</a>
+<a href=voluntariado.html style=--i:5>Voluntariado</a>
+</nav>
+<div class=social-media>
+<a href=https://www.instagram.com/fundacionvitalosangeles/ target=_blank style=--i:1><i class="bx bxl-instagram"></i></a>
+<a href=https://wa.me/+56982440812 target=_blank style=--i:2><i class="bx bxl-whatsapp"></i></a>
+<a href=https://www.tiktok.com/@Fundacion.vita target=_blank style=--i:3><i class="bx bxl-tiktok"></i></a>
+</div>
+<div class=hamburger>
+<i class="bx bx-menu"></i>
+</div>
+<div class="close hidden">
+<i class="bx bx-x"></i>
+</div>
+</header>
+<section class=home>
+<div class=home-content>
+<h1>Fundación Vita</h1>
+<h3>"Promoviendo la Inclusión y el Bienestar de todos"</h3>
+<p>En Fundación Vita promovemos la Inclusión de personas neurodivergentes, fomentando su desarrollo integral mediante oportunidades equitativas. Utilizamos el arte y la cultura como herramientas para mejorar su bienestar y participación. Ofrecemos apoyo terapéutico y espacios formativos que benefician a nuestros usuarios y sus familias, con un enfoque en la Neurodiversidad y los derechos. Nuestro equipo y voluntarios se dedican a proyectos inclusivos que celebran la diversidad humana.
+</p>
+<a href=nosotros.php><button class=button>Saber Más</button></a>
+</div>
+<div class=home-img>
+<div class=rhombus>
+<img src=img/logo.png class=logo-img alt=logo>
+</div>
+</div>
+<div class=rhombus2></div>
 </section>
-
-
-<!--FOOTER-->
-<footer class="footer-area">
-
-    <div class="main">
-        <div class="footer">
-            <div class="single-footer">
-                
-                <h4>Fundación Vita</h4>
-                <p>En Fundación Vita promovemos la Inclusión de personas neurodivergentes, fomentando su desarrollo integral mediante oportunidades equitativas. Utilizamos el arte y la cultura como herramientas para mejorar su bienestar y participación.</p>
-                <div class="footer-social">
-                    <a href="https://www.instagram.com/fundacionvitalosangeles/"><i class='bx bxl-instagram' ></i></a>
-                    <a href="https://wa.me/+56982440812" target="_blank" style="--i:2;"><i class='bx bxl-whatsapp'></i></a>
-                    <a href="https://www.tiktok.com/@Fundacion.vita" target="_blank" style="--i:3;"><i class='bx bxl-tiktok' ></i></a>
-                </div>
-            </div>
-            <div class="single-footer">
-                <h4>Menú</h4>
-                <ul>
-                    <li><a href="index.html"><i class='bx bx-chevron-right' ></i>Home</a></li>
-                    <li><a href="index.html#nosotros"><i class='bx bx-chevron-right' ></i>Nosotros</a></li>
-                    <li><a href="index.html#galeria"><i class='bx bx-chevron-right' ></i>Galería</a></li>
-                    <li><a href="index.html#contacto"><i class='bx bx-chevron-right' ></i>Contacto</a></li>
-                    <li><a href="donar.html"><i class='bx bx-chevron-right' ></i>Donar</a></li>
-                    <li><a href="voluntariado.html"><i class='bx bx-chevron-right' ></i>Voluntariado</a></li>
-                </ul>
-            </div>
-            <div class="single-footer">
-                <h4>Contáctanos</h4>
-                <ul>
-                    <li><a   target="_blank" href="https://www.google.com/maps/place/Caupolicán+104,+2º+piso,+Los+Angeles,+Los+Ángeles,+Bío+Bío/data=!4m2!3m1!1s0x966bdd4ec1a6dabb:0x75545f0ec7ceb550?sa=X&ved=1t:242&ictx=111"> <i class='bx bx-map'  ></i>Caupolican #104 2º piso, Los Ángeles, Chile</a></li>
-                    <li><a href="index.html"><i target="_blank" class='bx bx-mobile' ></i>+56 9 8244 0812</a></li>
-                    <li><a href="mailto:vita@gmail.com" target="_blank"><i class='bx bx-envelope'></i> fundacionvitalosangeles@gmail.com
-                    </a></li>
-                    <li><a href="#menu"><i class='bx bx-globe' ></i> www.fundacionvita.com</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copy">
-        <p>&copy; 2024 todos los derechos reservados</p>
-    </div>
-    </footer>
-    
-
-  <!-- Botón flotante para abrir el menú de accesibilidad -->
-  <div class="accessibility-button" onclick="toggleAccessibilityMenu()">
-    <i class='bx bx-universal-access' style='color:#ffffff'  ></i>
-  </div>
-
-  <!-- Menú de accesibilidad -->
-  <div class="accessibility-menu" id="accessibility-menu">
-    <div class="close-button" onclick="toggleAccessibilityMenu()"><i class='bx bx-x'></i></div>
-    <div class="menu-options">
-      <div class="option">
-        <button onclick="adjustTextSize('increase')">A+</button>
-        <p>Agrandar</p>
-      </div>
-      <div class="option">
-        <button onclick="adjustTextSize('decrease')">A-</button>
-        <p>Disminuir</p>
-      </div>
-      <div class="option fixed-button">
-        <button onclick="toggleContrast()"><i class='bx bxs-paint'></i></button>
-        <p>Contraste</p>
-      </div>
-      <div class="option">
-        <button onclick="highlightInteractiveElements()"><i class='bx bx-highlight' ></i></button>
-        <p>Resaltar</p>
-      </div>      
-      <div class="option">
-        <button onclick="activateReading()"><i class='bx bx-volume-full'></i></button>
-        <p>Audio Lectura</p>
-      </div>
-    </div>
-  </div>
-
-    <script src="script.js"></script>
+<section class=nosotros id=nosotros>
+<div class=nosotros_content>
+<img src=img/estantevita.jpg class=nosotros_img alt="Nosotros Image">
+<div class=nosotros_texto>
+<h2> <span class=morado> ¿Quiénes Somos?</span><hr class=linea-nosotros></h2>
+<p>La <span class=rosado>Fundación Vita</span> nace del profundo compromiso y la experiencia personal de su fundadora, una destacada profesional en el campo de la salud y el bienestar. Impulsada por vivencias personales y familiares que la han sensibilizado frente a las necesidades de quienes enfrentan dificultades funcionales, nuestra fundadora decidió canalizar su vocación de servicio en una institución dedicada a mejorar la calidad de vida de la comunidad. VITA se constituye como un espacio inclusivo y solidario, cuyo principal objetivo es ofrecer atención integral y apoyo a personas con diversidad funcional, facilitando su desarrollo y promoviendo su autonomía. A través de una amplia gama de servicios y programas personalizados, la fundación se compromete a ser un pilar de esperanza y transformación. Esta promueve la inclusión a través de terapias, talleres y capacitaciones asequibles en <span class=rosado>la comuna de Los Ángeles</span>.</p>
+<br>
+<a href=nosotros.php><button class=button>Saber Más</button></a>
+</div>
+</div>
+</section>
+<section class=gallery-container id=galeria>
+<div class=featured-image>
+<img id=featured src=img/imgrid1.jpg alt="Imagen destacada">
+</div>
+<div class=image-slider>
+<button class=prev-btn>&#10094;</button>
+<div class=image-grid-container>
+<div class=image-grid>
+<div class=image-item>
+<img src=img/imgrid2.jpg alt="Imagen 1">
+</div>
+<div class=image-item>
+<img src=img/imgrid3.jpg alt="Imagen 2">
+</div>
+<div class=image-item>
+<img src=img/imgrid4.jpg alt="Imagen 3">
+</div>
+<div class=image-item>
+<img src=img/imgrid5.jpg alt="Imagen 4">
+</div>
+<div class=image-item>
+<img src=img/imgrid6.jpg alt="Imagen 5">
+</div>
+</div>
+</div>
+<button class=next-btn>&#10095;</button>
+</div>
+</section>
+<section class=contact-section id=contacto>
+<div class=contact-wrapper>
+<div class=contact-container>
+<h2>Contáctanos</h2>
+<p class=subtext>Escríbenos cualquier duda que tengas, estamos aquí para ayudarte.</p>
+<form action=# method=post>
+<div class=input-group>
+<label for=name>Nombre</label>
+<input id=name name=name placeholder="Ingrese Nombre" required>
+</div>
+<div class=input-group>
+<label for=email>Email</label>
+<input type=email id=email name=email placeholder="Ingrese un Email" required>
+</div>
+<div class=input-group>
+<label for=message>Mensaje</label>
+<textarea id=message name=message rows=5 required placeholder=Mensaje></textarea>
+</div>
+<button type=submit class=btn-submit>Enviar</button>
+</form>
+</div>
+<div class=map-container>
+<p class=map-text>Puedes encontrarnos aquí también en edificio Costa Brava 2º piso</p>
+<div class=map-iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.5396199027837!2d-72.35012902414907!3d-37.471590514559956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966bdd4ec1a6dabb%3A0xc6a28617a19a6ae7!2zQ2F1cG9saWPDoW4gMTA0LCBMb3MgQW5nZWxlcywgTG9zIMOBbmdlbGVzLCBCw61vIELDrW8!5e0!3m2!1ses!2scl!4v1728098846475!5m2!1ses!2scl" width=600 height=450 style=border:0 allowfullscreen loading=lazy referrerpolicy=no-referrer-when-downgrade></iframe>
+</div>
+</div>
+</div>
+</section>
+<footer class=footer-area>
+<div class=main>
+<div class=footer>
+<div class=single-footer>
+<h4>Fundación Vita</h4>
+<p>En Fundación Vita promovemos la Inclusión de personas neurodivergentes, fomentando su desarrollo integral mediante oportunidades equitativas. Utilizamos el arte y la cultura como herramientas para mejorar su bienestar y participación.</p>
+<div class=footer-social>
+<a href=https://www.instagram.com/fundacionvitalosangeles/ ><i class="bx bxl-instagram"></i></a>
+<a href=https://wa.me/+56982440812 target=_blank style=--i:2><i class="bx bxl-whatsapp"></i></a>
+<a href=https://www.tiktok.com/@Fundacion.vita target=_blank style=--i:3><i class="bx bxl-tiktok"></i></a>
+</div>
+</div>
+<div class=single-footer>
+<h4>Menú</h4>
+<ul>
+<li><a href=index.html><i class="bx bx-chevron-right"></i>Home</a></li>
+<li><a href=index.html#nosotros><i class="bx bx-chevron-right"></i>Nosotros</a></li>
+<li><a href=index.html#galeria><i class="bx bx-chevron-right"></i>Galería</a></li>
+<li><a href=index.html#contacto><i class="bx bx-chevron-right"></i>Contacto</a></li>
+<li><a href=donar.html><i class="bx bx-chevron-right"></i>Donar</a></li>
+<li><a href=voluntariado.html><i class="bx bx-chevron-right"></i>Voluntariado</a></li>
+</ul>
+</div>
+<div class=single-footer>
+<h4>Contáctanos</h4>
+<ul>
+<li><a target=_blank href="https://www.google.com/maps/place/Caupolicán+104,+2º+piso,+Los+Angeles,+Los+Ángeles,+Bío+Bío/data=!4m2!3m1!1s0x966bdd4ec1a6dabb:0x75545f0ec7ceb550?sa=X&ved=1t:242&ictx=111"> <i class="bx bx-map"></i>Caupolican #104 2º piso, Los Ángeles, Chile</a></li>
+<li><a href=index.html><i target=_blank class="bx bx-mobile"></i>+56 9 8244 0812</a></li>
+<li><a href=mailto:vita@gmail.com target=_blank><i class="bx bx-envelope"></i> fundacionvitalosangeles@gmail.com
+</a></li>
+<li><a href=#menu><i class="bx bx-globe"></i> www.fundacionvita.com</a></li>
+</ul>
+</div>
+</div>
+<div class=copy>
+<p>&copy; 2024 todos los derechos reservados</p>
+</div>
+</div></footer>
+<div class=accessibility-button onclick=toggleAccessibilityMenu()>
+<i class="bx bx-universal-access" style=color:#fff></i>
+</div>
+<div class=accessibility-menu id=accessibility-menu>
+<div class=close-button onclick=toggleAccessibilityMenu()><i class="bx bx-x"></i></div>
+<div class=menu-options>
+<div class=option>
+<button onclick='adjustTextSize("increase")'>A+</button>
+<p>Agrandar</p>
+</div>
+<div class=option>
+<button onclick='adjustTextSize("decrease")'>A-</button>
+<p>Disminuir</p>
+</div>
+<div class="option fixed-button">
+<button onclick=toggleContrast()><i class="bx bxs-paint"></i></button>
+<p>Contraste</p>
+</div>
+<div class=option>
+<button onclick=highlightInteractiveElements()><i class="bx bx-highlight"></i></button>
+<p>Resaltar</p>
+</div>
+<div class=option>
+<button onclick=activateReading()><i class="bx bx-volume-full"></i></button>
+<p>Audio Lectura</p>
+</div>
+</div>
+</div>
+<script src=script.js></script>
 </body>
 </html>

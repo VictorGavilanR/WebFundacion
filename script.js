@@ -1,3 +1,10 @@
+window.addEventListener("DOMContentLoaded", function() {
+    if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+    }
+});
+
+
 /*header cambia de color al bajar*/
     // Selecciona el header (navbar)
     const header = document.querySelector('.header');
@@ -316,3 +323,10 @@ document.addEventListener('click', function(event) {
 });
 
 console.log(services);
+
+
+// Remover el fragmento de la URL sin recargar la página
+if (window.location.hash) {
+    history.replaceState(null, null, window.location.pathname);
+}
+

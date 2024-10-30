@@ -1,0 +1,14 @@
+[28-Oct-2024 18:35:32 America/Santiago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/fundac43/public_html/admin/connection.php on line 10
+[28-Oct-2024 18:35:39 America/Santiago] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/fundac43/public_html/admin/connection.php on line 10
+[28-Oct-2024 18:48:54 America/Santiago] PHP Warning:  Undefined variable $queryDirectiva in /home/fundac43/public_html/nosotros.php on line 11
+[28-Oct-2024 18:48:54 America/Santiago] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home/fundac43/public_html/nosotros.php:11
+Stack trace:
+#0 /home/fundac43/public_html/nosotros.php(11): mysqli_query()
+#1 {main}
+  thrown in /home/fundac43/public_html/nosotros.php on line 11
+[28-Oct-2024 18:48:56 America/Santiago] PHP Warning:  Undefined variable $queryDirectiva in /home/fundac43/public_html/nosotros.php on line 11
+[28-Oct-2024 18:48:56 America/Santiago] PHP Fatal error:  Uncaught ValueError: mysqli_query(): Argument #2 ($query) cannot be empty in /home/fundac43/public_html/nosotros.php:11
+Stack trace:
+#0 /home/fundac43/public_html/nosotros.php(11): mysqli_query()
+#1 {main}
+  thrown in /home/fundac43/public_html/nosotros.php on line 11

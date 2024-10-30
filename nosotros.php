@@ -5,12 +5,6 @@ include 'admin/connection.php'; // Cambia 'ruta/al/archivo/connection.php' por l
 // Llamar a la función para obtener la conexión
 $conexion = connection();
 
-// Verificar si la conexión se realizó correctamente
-if (!$conexion) {
-    die("Conexión fallida: " . mysqli_connect_error());
-} else {
-    echo "Conexión exitosa a la base de datos<br>";
-}
 
 // Consultas para obtener los usuarios por rol
 $queryDirectiva = "SELECT * FROM usuarios WHERE rol_id = 1"; // Rol de Directiva (Fundadora)
@@ -21,27 +15,22 @@ $resultDirectiva = mysqli_query($conexion, $queryDirectiva);
 if (!$resultDirectiva) {
     die("Error en la consulta Directiva: " . mysqli_error($conexion));
 } else {
-    echo "Consulta de Directiva ejecutada correctamente<br>";
 }
 
 $resultEquipo = mysqli_query($conexion, $queryEquipo);
 if (!$resultEquipo) {
     die("Error en la consulta Equipo: " . mysqli_error($conexion));
 } else {
-    echo "Consulta de Equipo ejecutada correctamente<br>";
 }
 
 // Verificar si hay resultados y mostrarlos
 if (mysqli_num_rows($resultDirectiva) > 0) {
-    echo "Usuarios con rol 'Directiva' encontrados: " . mysqli_num_rows($resultDirectiva) . "<br>";
 } else {
-    echo "No se encontraron usuarios con rol 'Directiva'<br>";
 }
 
 if (mysqli_num_rows($resultEquipo) > 0) {
-    echo "Usuarios con rol 'Equipo' encontrados: " . mysqli_num_rows($resultEquipo) . "<br>";
+
 } else {
-    echo "No se encontraron usuarios con rol 'Equipo'<br>";
 }
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -159,34 +148,38 @@ error_reporting(E_ALL);
 
 
 <!-- Sección Directiva/Fundadora -->
+<!-- Sección Directiva/Fundadora -->
 <div class="decoration"></div>
 <div class="container">
     <h3 id="tercera-seccion"><span class="morado">Directiva</span></h3>
-    <div class="team-grid">
+    <?php
+    // Contar el número de filas en el resultado
+    $num_rows = mysqli_num_rows($resultDirectiva);
+
+    // Aplicar una clase adicional si hay solo un miembro
+    $teamGridClass = $num_rows === 1 ? 'team-grid single-member' : 'team-grid';
+    ?>
+    <div class="<?php echo $teamGridClass; ?>" style="<?php echo $num_rows === 1 ? 'display: flex; justify-content: center;' : ''; ?>">
         <?php
         while ($row = mysqli_fetch_assoc($resultDirectiva)) {
-            // Escapar y formatear los datos para evitar problemas en el modal
-            $nombre = addslashes($row['nombre']); // Escapar comillas simples
-            $profesion = addslashes($row['profesion']); // Escapar comillas simples
-            $servicios = addslashes($row['servicios']); // Escapar comillas simples
-            $n_identificacion = addslashes($row['n_identificacion']); // Escapar comillas simples
-
-            // Reemplazar saltos de línea con espacios para evitar problemas en el onclick
+            $nombre = addslashes($row['nombre']);
+            $profesion = addslashes($row['profesion']);
+            $servicios = addslashes($row['servicios']);
+            $n_identificacion = addslashes($row['n_identificacion']);
             $servicios = preg_replace('/\r|\n/', ' ', $servicios);
-
-            // Definir la ruta de la imagen escapada
             $imagePath = 'admin/' . htmlspecialchars($row['imagen'], ENT_QUOTES, 'UTF-8');
 
-            // Generar HTML con datos escapados y formateados
-            echo "<div class='team-member' onclick=\"openModal('$imagePath', '$nombre', '$profesion', '$servicios', )\">";
+            echo "<div class='team-member' onclick=\"openModal('$imagePath', '$nombre', '$profesion', '$servicios')\">";
             echo "<img src='$imagePath' alt='" . htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') . "'>";
             echo "<h3>" . htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') . "</h3>";
             echo "<p>" . htmlspecialchars($profesion, ENT_QUOTES, 'UTF-8') . "</p>";
-            echo "</div>"; // Cerrar el div 'team-member'
+            echo "</div>";
         }
         ?>
     </div>
 </div>
+
+
 
 
     <div id="myModal" class="modal">

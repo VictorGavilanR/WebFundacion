@@ -6,12 +6,12 @@ function connection() {
     $pass = "vidafundacion1234";
     $bd = "fundac43_user_crud_fundacion";
 
-    // Crear conexi√≥n
+    // Crear conexi®Æn
     $connect = mysqli_connect($host, $user, $pass, $bd);
 
-    // Verificar la conexi√≥n
+    // Verificar la conexi®Æn
     if (!$connect) {
-        die("Error de conexi√≥n: " . mysqli_connect_error());
+        die("Error de conexi®Æn: " . mysqli_connect_error());
     }
 
     return $connect;
