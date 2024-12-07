@@ -1,46 +1,57 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Variables del formulario
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    // Validar los datos
-    if (!empty($name) && !empty($email) && !empty($message)) {
-        // Correo de destino (tu correo)
-        $to = "fundacionvitalosangeles@gmail.com";  // Cambia a tu correo real aquí
-        $subject = "Nuevo mensaje de contacto";
+// Cargar archivos de PHPMailer
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-        // Encabezados del correo
-        $headers = "From: $name <$email>\r\n";  
-        $headers .= "Reply-To: $email\r\n";
-        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtener los datos del formulario
+    $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+    $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
+    $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
 
-        // Cuerpo del correo
-        $body = "
-            <html>
-            <head>
-                <title>$subject</title>
-            </head>
-            <body>
-                <h2>Nuevo mensaje de contacto</h2>
-                <p><strong>Nombre:</strong> $name</p>
-                <p><strong>Email:</strong> $email</p>
-                <p><strong>Mensaje:</strong> $message</p>
-            </body>
-            </html>
+    // Validar que todos los campos estén presentes
+    if (empty($name) || empty($email) || empty($message)) {
+        die("Por favor completa todos los campos.");
+    }
+
+    // Configuración de PHPMailer
+    $mail = new PHPMailer(true);
+    try {
+        // Configuración del servidor SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'contactofundacionvita@gmail.com'; // poner correo
+        $mail->Password = 'jwnjxwojpnlcrdnv'; //  contraseña de aplicación
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port = 465;
+
+        // Configurar UTF-8 para caracteres especiales
+        $mail->CharSet = 'UTF-8';
+
+        // Configurar el correo
+        $mail->setFrom($email, $name); // Quien envía el correo
+        $mail->addAddress('contactofundacionvita@gmail.com'); // Destinatario
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Nuevo mensaje desde el formulario de contacto Vita';
+        $mail->Body = "
+            <h1>Nuevo mensaje recibido</h1>
+            <p><strong>Nombre:</strong> {$name}</p>
+            <p><strong>Email:</strong> {$email}</p>
+            <p><strong>Mensaje:</strong></p>
+            <p>{$message}</p>
         ";
 
-        // Enviar el correo
-        if (mail($to, $subject, $body, $headers)) {
-            echo "El correo ha sido enviado exitosamente.";
-        } else {
-            echo "Error al enviar el correo.";
-        }
-    } else {
-        echo "Todos los campos son obligatorios.";
+        // Enviar correo
+        $mail->send();
+        echo "Correo enviado correctamente.";
+    } catch (Exception $e) {
+        echo "Hubo un error al enviar el correo: {$mail->ErrorInfo}";
     }
-} else {
-    echo "Método de solicitud no válido.";
 }
 ?>
